@@ -5,13 +5,15 @@ import Music from './Components/Music'
 import Merch from './Components/Merch'
 import Subscribe from './Components/Subscribe'
 import Cart from './Components/Cart'
+import Film from './Components/Film'
 
 export default (
     <Switch>
-        <Route exact path='/' component={Landing}/>
-        <Route exact path='/music' component={Music}/>
-        <Route exact path='/merch' component={Merch}/>
-        <Route exact path='/subscribe' component={Subscribe}/>
-        <Route exact path='/cart' component={Cart}/>
+        <Route exact path ='/' component={Landing}/>
+        <Route path ='/music' component={Music}/>
+        <Route path ='/merch' component={Merch}/>
+        <Route path ='/subscribe' component={Subscribe}/>
+        <Route path ='/cart' component={Cart}/>
+        <Route path ='/film' component={Film}/>
     </Switch>
 )

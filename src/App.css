@@ -1,38 +1,138 @@
-.App {
+.background-image{
+  height: 100vh;
+  width: 100vw;
+}
+
+#enter{
+  margin-top: -350px;
+  width: 100vw;
   text-align: center;
+  color: rgb(246, 232, 232);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#enter:hover{
+  font-size: 30px;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav-container{
+  height: 50px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.nav-links{
+  height: 40px;
+  width: 225px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#music-link{
+  font-size: 20px;
+  position: sticky;
+}
+#music-link:hover{
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#merch-link{
+  font-size: 20px;
+}
+#merch-link:hover{
+  font-size: 30px;
+  cursor: pointer;
+}
+
+#film-link{
+  font-size: 20px;
+}
+#film-link:hover{
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.music-page{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#ep-art{
+  margin-right: -40px;
+}
+
+#ep{
+  margin-top: 350px;
+  margin-left: -100px;
+  color: grey;
+  font-weight: 200;
+}
+
+#ep-title{
+  margin-top: 410px;
+  margin-left: -250px;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+#stream-button{
+  margin-top: 460px;
+  margin-left: -100px;
+}
+
+.merch-container{
+  width: 100vw;
+  height: 100vh;
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-container{
+  width: 300px;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.product{
+  width: 150px;
+  height: 200px;
+  background-color: black;
   color: white;
+  display: flex;
+  align-items: flex-end;
 }
 
-.App-link {
-  color: #61dafb;
+.product-info{
+  width: 150px;
+  height: 50px;
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#product-name{
+  width: 150px;
+  height: 25px;
+  /* font-size: 5px; */
+  background-color: blue;
+
+}
+
+#product-price{
+  width: 150px;
+  height: 25px;
+  background-color: brown;
 }
