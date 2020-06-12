@@ -2,6 +2,7 @@ import React from 'react';
 import {withRouter} from 'react-router-dom'
 import routes from './routes'
 import Nav from './Components/Nav'
+import Footer from './Components/Footer'
 import './App.css';
 
 function App(props) {
@@ -12,6 +13,7 @@ function App(props) {
       :(<>
       <Nav/>
       {routes}
+      <Footer/>
       </>)} 
    </div>
   );

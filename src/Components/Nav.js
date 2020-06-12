@@ -14,6 +14,9 @@ function Nav(props) {
                 <h2 
                     id='film-link'
                     onClick={() => props.history.push('/film')}>Film</h2>
+                <h2 
+                    id='contact-link'
+                    onClick={() => props.history.push('/contact')}>Contact</h2>
             </div>
         </header>
     )

@@ -22,9 +22,35 @@
   justify-content: center;
 }
 
+header{
+  width: 100vw;
+  position: fixed;
+}
+
+footer{
+  height: 50px;
+  width: 100vw;
+  /* background-color: deepskyblue; */
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.social-media-icons{
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  padding-left: 125px;
+}
+
+#icon{
+  margin-left: 10px;
+}
+
 .nav-links{
   height: 40px;
-  width: 225px;
+  width: 275px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,7 +61,7 @@
   position: sticky;
 }
 #music-link:hover{
-  font-size: 30px;
+  font-size: 22px;
   cursor: pointer;
 }
 
@@ -43,7 +69,7 @@
   font-size: 20px;
 }
 #merch-link:hover{
-  font-size: 30px;
+  font-size: 22px;
   cursor: pointer;
 }
 
@@ -51,45 +77,69 @@
   font-size: 20px;
 }
 #film-link:hover{
-  font-size: 30px;
+  font-size: 22px;
   cursor: pointer;
 }
 
+#contact-link{
+  font-size: 20px;
+}
+#contact-link:hover{
+  font-size: 22px;
+  cursor: pointer;
+}
 .music-page{
   height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-image: url('/photos/Hannett007298-R1-025-11.jpg');
+}
+
+.song-container{
+  height: 400px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+#song-info{
+  height: 75px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 #ep-art{
-  margin-right: -40px;
+  margin-top: 15px;
 }
 
 #ep{
-  margin-top: 350px;
-  margin-left: -100px;
-  color: grey;
-  font-weight: 200;
+ font-size: 20px;
+ font-weight: 200;
 }
 
 #ep-title{
-  margin-top: 410px;
-  margin-left: -250px;
+  font-size: 20px;
   font-weight: 500;
-  font-size: 30px;
+  margin-top: -15px;
 }
 
-#stream-button{
-  margin-top: 460px;
-  margin-left: -100px;
+.icon-container{
+  
 }
 
 .merch-container{
   width: 100vw;
   height: 100vh;
-  background-color: yellow;
+  background-image: url('/photos/Hannett007301-R1-007-2.jpg');
+  background-position: center;
+  /* background-size: cover; */
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,3 +186,53 @@
   height: 25px;
   background-color: brown;
 }
+
+.contact-page{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/photos/Hannett007298-R1-033-15.jpg');
+}
+
+.contact-info{
+  height: 200px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#contact-header{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#email-1{
+  margin-top: -20px;
+}
+
+#email-2{
+  margin-top: -20px;
+}
+
+.film-page{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/photos/Hannett007300-R1-051-24.jpg');
+}
+
+.film-container{
+  width: 500px;
+  height: 500px;
+  overflow: scroll;
+}
+
+#photo{
+  margin-left: 3px;
+}
+
