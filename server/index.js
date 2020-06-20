@@ -26,6 +26,7 @@ const express = require('express'),
     })
 
     app.post('/api/add-subscriber', ctrl.addEmail)
+    app.post('/api/add-product', ctrl.addProduct)
 
     //auth endpoints 
     app.post('/api/register', authCtrl.register)

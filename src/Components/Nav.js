@@ -1,7 +1,9 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
+import {connect} from 'react-redux';
 
 function Nav(props) {
+    console.log(props.user)
     return(
         <header className='nav-container'>
             <div className='nav-links'>
@@ -28,4 +30,10 @@ function Nav(props) {
     )
 }
 
-export default withRouter(Nav)
+const mapStateToProps = reduxState => {
+    
+    return {
+        user: reduxState.reducer
+    }};
+
+export default withRouter(connect(mapStateToProps)(Nav));

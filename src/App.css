@@ -1,10 +1,18 @@
+/* .landing{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
 .background-image{
   height: 100vh;
   width: 100vw;
 }
 
 #enter{
-  margin-top: -350px;
+  margin-top: -500px;
   width: 100vw;
   text-align: center;
   color: rgb(246, 232, 232);
@@ -346,4 +354,53 @@ footer{
   /* color: black;
   background-color: white; */
   cursor: pointer;
+}
+
+.product-page{
+  height: 100vh;
+  width: 100wh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/photos/Hannett007298-R1-029-13.jpg');
+}
+
+.product-container{
+  height: 300px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background-color: black; */
+}
+
+#product-input{
+  margin-bottom: 10px;
+  height: 35px;
+  width: 250px;
+  text-align: center;
+  background-color: transparent;
+  border-style: none;
+  outline: none;
+}
+#product-description{
+  margin-bottom: 10px;
+  height: 150px;
+  width: 250px;
+  /* text-align: center; */
+  background-color: transparent;
+  border-style: solid;
+  outline: none;
+}
+
+#product-button{
+  border-style: none;
+  background-color: black;
+  color: white;
+  height: 25px;
+}
+
+#product-button:hover{
+  background-color: grey;
 }

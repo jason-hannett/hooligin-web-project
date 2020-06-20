@@ -49,11 +49,11 @@ class Landing extends Component{
     render(props){
         console.log(this.state)
         return(
-            <div>
+            <div className='landing'>
                 <img 
                     className='background-image'
                     src='/photos/Hannett007300-R1-051-24.jpg'/>
-                <h2 id='enter' onClick={() => props.history.push('/music')}>ENTER</h2>
+                <h2 id='enter' onClick={() => this.props.history.push('/music')}>ENTER</h2>
                 <div>
                     <input
                         onChange={(event) => this.inputHandler(event)}

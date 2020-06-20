@@ -45,6 +45,8 @@ class Subscribe extends Component{
                     <input 
                         id='email-input' 
                         placeholder='ENTER EMAIL'
+                        name='email'
+                        value={this.state.email}
                         onChange={this.inputHandler}/>
                     <button 
                         id='subscribe-button'
