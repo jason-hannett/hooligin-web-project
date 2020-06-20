@@ -8,6 +8,7 @@ import Cart from './Components/Cart'
 import Film from './Components/Film'
 import Contact from './Components/Contact'
 
+
 export default (
     <Switch>
         <Route exact path ='/' component={Landing}/>

@@ -1,4 +1,4 @@
-insert into subscribers
-(id, email)
+insert into user_email
+(email)
 values
-(${id}, ${email});
+(${email});

@@ -8,9 +8,15 @@ function Nav(props) {
                 <h2 
                     id='music-link'
                     onClick={() => props.history.push('/music')}>Music</h2>
-                <h2 
-                    id='merch-link'
-                    onClick={() => props.history.push('/merch')}>Merch</h2>
+                <div className='dropdown'>
+                    <h2 
+                        className='dropbtn'
+                        onClick={() => props.history.push('/merch')}>Merch</h2>
+                    <div className='dropdown-content'>
+                        <p onClick={() => props.history.push('/merch')}>All</p>
+                        <p onClick={() => props.history.push('/merch')}>Legasea</p>
+                    </div>
+                </div>    
                 <h2 
                     id='film-link'
                     onClick={() => props.history.push('/film')}>Film</h2>
