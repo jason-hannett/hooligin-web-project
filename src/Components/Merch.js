@@ -1,6 +1,8 @@
 import React, {Component} from 'react' 
 import {withRouter} from 'react-router-dom' 
 import {connect} from 'react-redux'
+import Product from './Product'
+import axios from 'axios'
 
 class Merch extends Component{
 
@@ -8,25 +10,29 @@ class Merch extends Component{
         super(props)
 
         this.state = {
-
+            products: []
         }
     }
 
-    render(){
-        return(
-            <div className='merch-container'>
-                {this.props.user.id === 1 ? 
-                (
-                 <div>
-                     <button
-                        onClick={() => this.props.history.push('/product')}>add</button>
-                 </div>   
-                )
-            :
-            (
+    componentDidMount = () => {
+        this.getAllProducts()
+    }
 
-                <h1>Merch Coming Soon</h1>
-            )}
+    getAllProducts = () => {
+        axios.get('/api/all-products')
+        .then(response => {
+            this.setState({products: response.data})
+        })
+    }
+
+    render(){
+        console.log(this.state)
+        let product = this.state.products.map((element, index) => {
+            return <Product key={index} product={element} getAllProducts={this.getAllProducts}/>
+        })
+        return(
+            <div className='merch-page'>
+                {product}
             </div>
         )
     }
@@ -35,7 +41,8 @@ class Merch extends Component{
 const mapStateToProps = reduxState => {
     
     return {
-        user: reduxState.reducer
+        user: reduxState.reducer,
+        products: reduxState.product
     }};
 
 export default withRouter(connect(mapStateToProps)(Merch));

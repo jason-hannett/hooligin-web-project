@@ -1,3 +1,5 @@
+const { applyMiddleware } = require('redux');
+
 require('dotenv').config();
 const express = require('express'),
      massive = require('massive'),
@@ -25,8 +27,13 @@ const express = require('express'),
         console.log('db connected')
     })
 
+    app.get('/api/all-products', ctrl.getAllProducts)
+    app.get('/api/all-songs', ctrl.getAllSongs)
     app.post('/api/add-subscriber', ctrl.addEmail)
     app.post('/api/add-product', ctrl.addProduct)
+    app.post('/api/add-song', ctrl.addSong)
+    app.delete('/api/delete-song/:id', ctrl.deleteSong)
+    app.delete('/api/delete-product/:id', ctrl.deleteProduct)
 
     //auth endpoints 
     app.post('/api/register', authCtrl.register)

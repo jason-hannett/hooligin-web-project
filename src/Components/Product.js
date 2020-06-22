@@ -1,8 +1,7 @@
 import React, {Component} from 'react' 
 import {withRouter} from 'react-router-dom' 
 import {connect} from 'react-redux'
-import {setProductInfo} from '../redux/product'
-import axios from 'axios' 
+import axios from 'axios'
 
 class Product extends Component{
 
@@ -10,67 +9,45 @@ class Product extends Component{
         super(props)
 
         this.state = {
-            name: '',
-            image: '',
-            price: undefined,
-            description: ''
+            
         }
     }
 
-    addProduct = () => {
-        const {id} = this.props.user
-        axios.post('/api/add-product', {...this.state, id})
-        .then(response => {
-            // const {name, image, description, price} = response.data
-            // this.props.setProductInfo(name, image, description, price)
-            this.props.history.goBack()
-            }) 
-    }
 
-    inputHandler = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
+    deleteProduct = () => {
+        const {id} = this.props.product
+        axios.delete(`api/delete-product/${id}`)
+        .then(response => {
+            this.props.getAllProducts()
         })
     }
 
     render(){
-        console.log(this.state)
         return(
-            <div className='product-page'>
-                <div className='product-container'>
+                <div className='merch-container'>
+                    {this.props.user.id === 1 ? 
+                 (
+                  <img 
+                    src='/photos/7c4a0cb6456c697a85adaa9a90934ec4_black-resourcesforbitches-black-x-transparent-background-png-_400-400.jpg'
+                    height='10px' 
+                    id='x'
+                    onClick={this.deleteProduct}/>   
+                 )
+                :
+                (<></>)}
                     <img
-                        id='product-img'
-                        src={this.state.image}/>
-                    <input
-                            placeholder='image'
-                            name='image'
-                            value={this.state.image}
-                            onChange={(event) => this.inputHandler(event)}
-                            id='product-input'/>
-                    <input
-                        placeholder='name'
-                        name='name'
-                        value={this.state.name}
-                        onChange={(event) => this.inputHandler(event)}
-                        id='product-input'/>
-                    <input
-                        placeholder='price'
-                        value={this.state.price}
-                        name='price'
-                        type='number'
-                        onChange={(event) => this.inputHandler(event)}
-                        id='product-input'/>
-                    <input
-                        placeholder='description'
-                        value={this.state.description}
-                        name='description'
-                        onChange={(event) => this.inputHandler(event)}
-                        id='product-description'/>
-                    <button 
-                        id='product-button'
-                        onClick={this.addProduct}>Add</button>
+                        src={this.props.product.image}
+                        height='250px'
+                        width='260px'/>
+                    <div className='merch-info'>
+                        <h2 
+                            id='merch-name'>{this.props.product.name}</h2>
+                        <p
+                            id='merch-price'>${this.props.product.price}</p>
+                        <button>view details</button>
+                    </div>
                 </div>
-            </div>
+            
         )
     }
 }
@@ -79,7 +56,7 @@ const mapStateToProps = reduxState => {
     
     return {
         user: reduxState.reducer,
-        product: reduxState.product
+        products: reduxState.product
     }};
 
-export default connect(mapStateToProps, {setProductInfo})(withRouter(Product))
+export default withRouter(connect(mapStateToProps)(Product));

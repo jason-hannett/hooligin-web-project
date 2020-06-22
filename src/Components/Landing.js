@@ -50,24 +50,18 @@ class Landing extends Component{
         console.log(this.state)
         return(
             <div className='landing'>
-                <img 
-                    className='background-image'
-                    src='/photos/Hannett007300-R1-051-24.jpg'/>
-                <h2 id='enter' onClick={() => this.props.history.push('/music')}>ENTER</h2>
-                <div>
-                    <input
+                <input
                         onChange={(event) => this.inputHandler(event)}
                         name='email' 
                         placeholder='email' 
                         id='login'/>
-                    <input
+                <input
                         onChange={(event) => this.inputHandler(event)}
                         name='password' 
                         placeholder='password' 
                         id='password'
                         type='password'/>
-                    <button onClick={this.login}>Login</button>
-                </div>
+                <h2 id='enter' onClick={this.login}>ENTER</h2>
             </div>
         )
     }

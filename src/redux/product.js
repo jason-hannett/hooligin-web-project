@@ -8,10 +8,10 @@ const initialState = {
 
 const SET_PRODUCT_INFO = 'SET_PRODUCT_INFO'
 
-export const setProductInfo = (name, image, description, price, id) => {
+export const setProductInfo = (id, name, image, description, price) => {
     return {
         type: SET_PRODUCT_INFO,
-        payload: {name, image, description, price, id}
+        payload: {id, name, image, description, price}
     }
 }
 

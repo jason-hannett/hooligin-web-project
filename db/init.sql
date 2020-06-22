@@ -16,3 +16,14 @@ create table product(
     description varchar(500),
     price int
 );
+
+create table song 
+(
+    id serial primary key,
+    song_image text,
+    type varchar(50),
+    title varchar(200),
+    spotify text,
+    apple text,
+    soundcloud text
+);

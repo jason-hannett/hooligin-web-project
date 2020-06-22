@@ -7,7 +7,7 @@ import Subscribe from './Components/Subscribe'
 import Cart from './Components/Cart'
 import Film from './Components/Film'
 import Contact from './Components/Contact'
-import Product from './Components/Product'
+import Admin from './Components/Admin'
 
 
 export default (
@@ -19,6 +19,6 @@ export default (
         <Route path ='/cart' component={Cart}/>
         <Route path ='/film' component={Film}/>
         <Route path ='/contact' component={Contact}/>
-        <Route path ='/product' component={Product}/>
+        <Route path ='/admin' component={Admin}/>
     </Switch>
 )
