@@ -38,13 +38,15 @@ class Product extends Component{
                     <img
                         src={this.props.product.image}
                         height='250px'
-                        width='260px'/>
+                        width='250px'/>
                     <div className='merch-info'>
                         <h2 
                             id='merch-name'>{this.props.product.name}</h2>
                         <p
                             id='merch-price'>${this.props.product.price}</p>
-                        <button>view details</button>
+                        <button
+                            id='merch-button'
+                            onClick={() => this.props.history.push(`/product/${this.props.product.id}`)}>view details</button>
                     </div>
                 </div>
             

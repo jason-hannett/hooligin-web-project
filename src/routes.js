@@ -8,6 +8,7 @@ import Cart from './Components/Cart'
 import Film from './Components/Film'
 import Contact from './Components/Contact'
 import Admin from './Components/Admin'
+import Viewproduct from './Components/Viewproduct'
 
 
 export default (
@@ -20,5 +21,6 @@ export default (
         <Route path ='/film' component={Film}/>
         <Route path ='/contact' component={Contact}/>
         <Route path ='/admin' component={Admin}/>
+        <Route path ='/product:id' component={Viewproduct}/>
     </Switch>
 )

@@ -47,7 +47,6 @@ class Landing extends Component{
     }
 
     render(props){
-        console.log(this.state)
         return(
             <div className='landing'>
                 <input

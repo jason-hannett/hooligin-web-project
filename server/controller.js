@@ -29,6 +29,15 @@ module.exports = {
         .catch(err => res.status(500).send(err))
     },
 
+    getProduct: (req, res) => {
+        const db = req.app.get('db');
+        const {id} = req.params
+ 
+        db.get_product(id)
+        .then(song => res.status(200).send(song))
+        .catch(err => res.status(500).send(err))
+    },
+
     addSong: (req, res) => {
         const db = req.app.get('db');
         const {id, song_image, type, title, spotify, apple, soundcloud } = req.body;
