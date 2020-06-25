@@ -34,6 +34,14 @@ function Nav(props) {
                 (<></>)}
                 
             </div>
+            <div className='shopping-cart-container'>
+                <img
+                    id='shopping-cart' 
+                    src='/photos/shopping_cart_PNG38.png'
+                    height='25px'
+                    onClick={() => props.history.push('/cart')}/>
+                <p className='nav-cart-qty'>2</p>
+            </div>
         </header>
     )
 }
@@ -41,7 +49,8 @@ function Nav(props) {
 const mapStateToProps = reduxState => {
     
     return {
-        user: reduxState.reducer
+        user: reduxState.reducer,
+        cart: reduxState.cart
     }};
 
 export default withRouter(connect(mapStateToProps)(Nav));

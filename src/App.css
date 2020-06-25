@@ -5,9 +5,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url('/photos/Hannett007300-R1-051-24.jpg');
-  background-repeat: no-repeat;
-  background-position: cover;
+  background: url('/photos/Hannett007300-R1-051-24.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 #login{
@@ -60,10 +59,12 @@
 }
 
 .nav-container{
-  height: 50px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent;
+  color: black;
 }
 
 header{
@@ -129,15 +130,16 @@ header{
 }
 
 footer{
-  height: 50px;
+  height: 38px;
   width: 100vw;
   background-color: transparent;
   bottom: 0;
-  margin-top: 50px;
+  /* margin-top: 50px; */
   position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: transparent
 }
 .social-media-icons{
   width: 300px;
@@ -210,16 +212,34 @@ footer{
   cursor: pointer;
 }
 
+.shopping-cart-container{
+  height: auto;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#shopping-cart{
+  margin-left: 700px;
+}
+
+#shopping-cart:hover{
+  margin-left: 700px;
+  cursor: pointer;
+}
+
+.nav-cart-qty{
+  font-size: 10px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
 .music-page{
   height: 100vh;
   width: 100vw;
-  padding-top: 50px;
-  padding-bottom: 50px;
   display: flex;
-  overflow-y: scroll;
   align-items: center;
-  flex-direction: column;
-  /* justify-content: center; */
   background-image: url('/photos/Hannett007298-R1-025-11.jpg');
 }
 
@@ -270,10 +290,22 @@ footer{
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  padding-top: 250px;
-  padding-bottom: 50px;
+  /* padding-top: 175px; */
+  /* padding-bottom: 50px; */
+}
+
+.contain-scroll{
+  height: 500px;
+  width: 100vw;
+  /* position: absolute; */
   overflow-y: scroll;
+  /* background-color: pink; */
+  display: flex;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  flex-direction: column;
+  padding-top: 50px;
+  /* padding-bottom: 50px; */
 }
 
 .merch-container{
@@ -460,8 +492,8 @@ footer{
   justify-content: center;
   flex-direction: column;
   overflow-y: scroll;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 150px;
+  padding-bottom: 150px;
   background-image: url('/photos/Hannett007298-R1-029-13.jpg');
 }
 
@@ -472,9 +504,16 @@ footer{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* background-color: black; */
-  border-style: solid;
+  background-color: black;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2%;
+  border-style: none;
   margin-bottom: 25px;
+  padding-bottom: 10px;
+}
+
+#add-product-header{
+  color: black;
 }
 
 #product-input{
@@ -484,6 +523,7 @@ footer{
   text-align: center;
   background-color: transparent;
   border-style: none;
+  background-color: white;
   outline: none;
 }
 #product-description{
@@ -491,20 +531,23 @@ footer{
   height: 150px;
   width: 250px;
   /* text-align: center; */
-  background-color: transparent;
-  border-style: solid;
+  background-color: white;
+  border-style: none;
   outline: none;
+  word-wrap: break-word;
+  overflow-y: scroll;
 }
 
 #product-button{
   border-style: none;
-  background-color: black;
+  background-color: rgb(58, 58, 58);
   color: white;
   height: 25px;
 }
 
 #product-button:hover{
   background-color: grey;
+  cursor: pointer;
 }
 
 .add-song-container{
@@ -514,8 +557,15 @@ footer{
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* background-color: black; */
-  border-style: solid;
+  background-color: black;
+  background: rgba(0, 0, 0, 0.2);
+  padding-bottom: 10px;
+  border-style: none;
+  border-radius: 2%;
+}
+
+#add-song-header{
+  color: black;
 }
 
 #song-input{
@@ -523,20 +573,21 @@ footer{
   height: 35px;
   width: 250px;
   text-align: center;
-  background-color: transparent;
+  background-color: white;
   border-style: none;
   outline: none;
 }
 
 #add-song-button{
   border-style: none;
-  background-color: black;
+  background-color: rgb(58, 58, 58);
   color: white;
   height: 25px;
 }
 
 #add-song-button:hover{
   background-color: grey;
+  cursor: pointer;
 }
 
 #x{
@@ -557,7 +608,8 @@ footer{
 .view-product-page{
   height: 100vh;
   width: 100vw;
-  background-color: black;
+  /* background-color: black; */
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -565,7 +617,64 @@ footer{
 }
 
 .view-product-container{
+  height: 400px;
+  width: 700px;
+  /* background-color: pink; */
+}
+
+
+#view-product-image{
+  margin-top: 10px;
+  margin-left: 10px;
+
+}
+
+#single-merch-name{
+  color: black;
+}
+
+#single-merch-price{
+  color: black;
+  margin-top: -10px;
+}
+
+.single-merch-info{
+  width: 200px;
+  height: 100px;
+  margin-left: 375px;
+  margin-top: -270px;
+}
+
+.view-product-description-container{
+  height: 100px;
+  width: 250px;
+  margin-left: 375px;
+  margin-top: -20px;
+  padding-left: 5px;
+  word-wrap: break-word;
+}
+
+#view-product-image{
+  box-shadow: 5px, 5px, 20px, 20px black;
+}
+
+#view-product-select{
+  margin-left: 375px;
+  margin-top: 30px;
+  width: 150px;
+  height: 30px;
+}
+
+#add-to-cart{
+  height: 30px;
+  margin-left: 10px;
+  background-color: black;
+  border-style: none;
+  color: white;
+}
+
+/* .view-product-container{
   height: 500px;
   width: 700px;
   background-color: pink;
-}
+} */

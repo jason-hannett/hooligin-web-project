@@ -21,6 +21,6 @@ export default (
         <Route path ='/film' component={Film}/>
         <Route path ='/contact' component={Contact}/>
         <Route path ='/admin' component={Admin}/>
-        <Route path ='/product:id' component={Viewproduct}/>
+        <Route path ='/product/:id' component={Viewproduct}/>
     </Switch>
 )

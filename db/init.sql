@@ -27,3 +27,8 @@ create table song
     apple text,
     soundcloud text
 );
+
+create table cart(
+    cart_id serial primary key,
+    id int references product(id)
+);

@@ -19,7 +19,7 @@ function Song(props) {
                  {props.user.id === 1 ? 
                  (
                   <img 
-                    src='/photos/7c4a0cb6456c697a85adaa9a90934ec4_black-resourcesforbitches-black-x-transparent-background-png-_400-400.jpg'
+                    src='/photos/kisspng-x-mark-check-mark-cross-sign-clip-art-x-mark-5ac402470c31d6.21140477152279507905.png'
                     height='10px' 
                     id='x'
                     onClick={deleteSong}/>   

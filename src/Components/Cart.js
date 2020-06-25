@@ -1,4 +1,6 @@
 import React, {Component} from 'react' 
+import {connect} from 'react-redux'
+import Product from './Product'
 import axios from 'axios'
 
 class Cart extends Component{
@@ -6,19 +8,16 @@ class Cart extends Component{
     constructor(props){
         super()
         this.state = {
-            input: ''
+            cart: []
         }
     }
 
-    subscribe = () => {
-        console.log('clicked')
-    axios.post('/api/add-subscriber', this.state)
-    .then(response => {
-        this.setState({input: response.data})
-        this.props.history.goBack()
-    })
-    .catch(err => console.log(err))
-}
+    componentDidMount = () => {
+        axios.get('/api/get-cart')
+        .then(response => {
+            this.setState({cart: response.data})
+        })
+    }
 
     inputHandler = (event) => {
         this.setState({
@@ -27,18 +26,23 @@ class Cart extends Component{
     }
 
     render(){
+        console.log(this.props)
+        const getCart = this.state.cart.map((element, index) => {
+            return <Product key={index} product={element}/>
+        })
         return(
             <div>
-                Cart
-                <input 
-                    onChange={this.inputHandler}
-                    value={this.state.input}
-                    name='input'
-                    placeholder='email'/>
-                <button onClick={this.subscribe}>subscribe</button>
+                {getCart}
             </div>
         )
     }
 }
 
-export default Cart
+const mapStateToProps = reduxState => {
+    
+    return {
+        products: reduxState.product,
+        cart: reduxState.cart
+    }};
+
+export default connect(mapStateToProps)(Cart);

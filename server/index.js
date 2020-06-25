@@ -30,11 +30,14 @@ const express = require('express'),
     app.get('/api/all-products', ctrl.getAllProducts)
     app.get('/api/all-songs', ctrl.getAllSongs)
     app.get('/api/product/:id', ctrl.getProduct)
+    app.get('/api/get-cart', ctrl.getAllCart)
     app.post('/api/add-subscriber', ctrl.addEmail)
     app.post('/api/add-product', ctrl.addProduct)
     app.post('/api/add-song', ctrl.addSong)
+    app.post('/api/add-cart/:id', ctrl.addCart)
     app.delete('/api/delete-song/:id', ctrl.deleteSong)
     app.delete('/api/delete-product/:id', ctrl.deleteProduct)
+    app.put(`/api/update-product/:id`, ctrl.updateProduct)
 
     //auth endpoints 
     app.post('/api/register', authCtrl.register)

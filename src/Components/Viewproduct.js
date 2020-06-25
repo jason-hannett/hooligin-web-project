@@ -25,22 +25,18 @@ class Viewproduct extends Component{
             this.setState({singleProduct: response.data})
         })
     }
+
     
     render(){
         console.log(this.props.location)
-        let singleProduct = this.state.products.map((element, index) => {
-            return <Product key={`singleProduct: ${index}`} product={element} getAllProducts={this.getAllProducts}/>
+        let singleProduct = this.state.singleProduct.map((element, index) => {
+            return <Product key={index} product={element} getProduct={this.getProduct}/>
         })
         return(
             <div className='view-product-page'>
-                viewproduct
-                {/* <div className='view-product-container'>
-                    <img
-                        src={this.props.product.image}/>
-                    <h2>{this.props.product.name}</h2>
-                    <p>{this.props.product.price}</p>
-                </div> */}
+                <div className='view-product-container'>
                 {singleProduct}
+                </div>
             </div>
         )
     }

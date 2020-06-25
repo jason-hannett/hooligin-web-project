@@ -38,6 +38,17 @@ module.exports = {
         .catch(err => res.status(500).send(err))
     },
 
+    updateProduct: (req, res) => {
+        const db = req.app.get('db');
+        const {id} = req.params
+        const {size} = req.body
+        console.log(req.body)
+        console.log(req.params)
+        db.update_product(id, size)
+        .then(product => res.status(200).send(product))
+        .catch(err => res.status(500).send(err))
+    },
+
     addSong: (req, res) => {
         const db = req.app.get('db');
         const {id, song_image, type, title, spotify, apple, soundcloud } = req.body;
@@ -70,5 +81,24 @@ module.exports = {
         .then(() => res.sendStatus(200))
         .catch(err => res.status(500).send(err))
     },
+
+    addCart: (req, res) => {
+        const db = req.app.get('db');
+        // const {cart_id} = req.session.user;
+        const {id} = req.params
+         console.log(req.body)
+         console.log(req.params)
+        db.add_cart({id})
+        .then(() => res.sendStatus(200))
+        .catch(err => res.status(500).send(err))
+    },
+
+    getAllCart: (req, res) => {
+        const db = req.app.get('db');
+        db.get_all_cart()
+        .then(cart => res.status(200).send(cart))
+        .catch(err => res.status(500).send(err))
+    },
+
   
 }

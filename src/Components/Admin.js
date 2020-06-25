@@ -57,6 +57,7 @@ class Admin extends Component{
         return(
             <div className='product-page'>
                 <div className='product-container'>
+                <h2 id='add-product-header'>Add Product</h2>
                     <img
                         id='product-img'
                         src={this.state.image}
@@ -91,6 +92,7 @@ class Admin extends Component{
                         onClick={this.addProduct}>Add Product</button>
                 </div>
                 <div className='add-song-container'>
+                <h2 id='add-song-header'>Add Song</h2>
                     <input
                         id='song-input'
                         onChange={(event) => this.inputHandler(event)}
