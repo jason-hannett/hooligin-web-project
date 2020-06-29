@@ -1,0 +1,20 @@
+footer{
+    height: 38px;
+    width: 100vw;
+    background-color: transparent;
+    bottom: 0;
+    /* margin-top: 50px; */
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent
+  }
+
+  #icon{
+    margin-left: 20px;
+  }
+  
+  #icon:hover{
+    cursor: pointer;
+  }

@@ -1,0 +1,34 @@
+.cart-container{
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-color: white;
+    margin-bottom: 5px;
+    
+}
+
+#cart-product-name{
+    height: 50px;
+    width: 120px;
+    margin-left: -35px;
+}
+
+#qty-input{
+    height: 10px;
+    width: 15px;
+    text-align: center;
+}
+
+#cart-button{
+    border-style: none;
+    background-color: black;
+    color: white;
+    height: 25px;
+}
+
+#cart-button:hover{
+    cursor: pointer;
+}

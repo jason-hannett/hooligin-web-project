@@ -1,0 +1,29 @@
+.contact-page{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/photos/Hannett007298-R1-033-15.jpg');
+  }
+
+  .contact-info{
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  #contact-header{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  
+  #email-1{
+    margin-top: -20px;
+  }
+  
+  #email-2{
+    margin-top: -20px;
+  }

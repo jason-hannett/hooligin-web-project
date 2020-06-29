@@ -1,8 +1,8 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom'
 import routes from './routes'
-import Nav from './Components/Nav'
-import Footer from './Components/Footer'
+import Nav from './Components/nav/Nav'
+import Footer from './Components/footer/Footer'
 import './App.css';
 
 function App(props) {

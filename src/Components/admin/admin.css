@@ -1,0 +1,105 @@
+.product-page{
+    height: 100vh;
+    width: 100wh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-image: url('/photos/Hannett007298-R1-029-13.jpg');
+  }
+
+  .product-container{
+    height: 400px;
+    width: 275px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 2%;
+    border-style: none;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+  }
+
+  #add-product-header{
+    color: black;
+  }
+  
+  #product-input{
+    margin-bottom: 10px;
+    height: 35px;
+    width: 250px;
+    text-align: center;
+    background-color: transparent;
+    border-style: none;
+    background-color: white;
+    outline: none;
+  }
+  #product-description{
+    margin-bottom: 10px;
+    height: 150px;
+    width: 250px;
+    /* text-align: center; */
+    background-color: white;
+    border-style: none;
+    outline: none;
+    word-wrap: break-word;
+    overflow-y: scroll;
+  }
+  
+  #product-button{
+    border-style: none;
+    background-color: rgb(58, 58, 58);
+    color: white;
+    height: 25px;
+  }
+  
+  #product-button:hover{
+    background-color: grey;
+    cursor: pointer;
+  }
+
+  .add-song-container{
+    height: 350px;
+    width: 275px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: black;
+    background: rgba(0, 0, 0, 0.2);
+    padding-bottom: 10px;
+    border-style: none;
+    border-radius: 2%;
+  }
+  
+  #add-song-header{
+    color: black;
+  }
+  
+  #song-input{
+    margin-bottom: 10px;
+    height: 35px;
+    width: 250px;
+    text-align: center;
+    background-color: white;
+    border-style: none;
+    outline: none;
+  }
+  
+  #add-song-button{
+    border-style: none;
+    background-color: rgb(58, 58, 58);
+    color: white;
+    height: 25px;
+  }
+  
+  #add-song-button:hover{
+    background-color: grey;
+    cursor: pointer;
+  }

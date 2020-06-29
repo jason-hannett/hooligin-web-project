@@ -1,0 +1,21 @@
+.merch-page{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('./Hannett000336-R1-068-32A.jpg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .contain-scroll{
+    height: 500px;
+    width: 100vw;
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 50px;
+  }

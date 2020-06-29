@@ -37,6 +37,7 @@ const express = require('express'),
     app.post('/api/add-cart/:id', ctrl.addCart)
     app.delete('/api/delete-song/:id', ctrl.deleteSong)
     app.delete('/api/delete-product/:id', ctrl.deleteProduct)
+    app.delete('/api/delete-cart-item/:cart_id', ctrl.deleteCartItem)
     app.put(`/api/update-product/:id`, ctrl.updateProduct)
 
     //auth endpoints 
