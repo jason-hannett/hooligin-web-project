@@ -11,12 +11,13 @@
   }
   
   .contain-scroll-merch{
-    height: 500px;
+    height: 410px;
     width: 100vw;
     overflow-y: scroll;
     display: flex;
     align-items: center;
     flex-direction: column;
+    margin-top: 85px;
     padding-top: 50px;
   }
 

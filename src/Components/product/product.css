@@ -35,6 +35,8 @@
   #view-product-image{
     margin-top: 10px;
     margin-left: 10px;
+    /* height: 175px;
+    width: 175px; */
   }
   
   .view-product-description-container{
@@ -63,6 +65,10 @@
     background-color: black;
     border-style: none;
     color: white;
+  }
+
+  #add-to-cart:hover{
+    cursor: pointer;
   }
 
   #x{

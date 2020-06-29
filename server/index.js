@@ -7,10 +7,15 @@ const express = require('express'),
      {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
      ctrl = require('./controller'),
      authCtrl = require('./authController'),
+     path = require('path'),
      port = SERVER_PORT,
      app = express();
 
      app.use(express.json());
+
+     app.get('*', (req, res)=>{
+        res.sendFile(path.join(__dirname, '../build/index.html'));
+    });
 
      app.use(session({
         resave: false,

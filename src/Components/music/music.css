@@ -4,6 +4,7 @@
     display: flex;
     align-items: center;
     background-image: url('./Hannett000338-R1-048-22A.jpg');
+    background-size: cover;
   }
 
   .contain-scroll-music{
@@ -23,6 +24,7 @@
       display: flex;
       align-items: center;
       background-image: url('./Hannett000338-R1-048-22A.jpg');
+      background-size: cover;
     }
   
     .contain-scroll-music{

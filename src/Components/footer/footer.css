@@ -18,3 +18,27 @@ footer{
   #icon:hover{
     cursor: pointer;
   }
+
+  @media only screen and (max-width: 375px){
+    
+    footer{
+      height: 38px;
+      width: 100vw;
+      background-color: transparent;
+      bottom: 0;
+      /* margin-top: 50px; */
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      background-color: transparent
+    }
+  
+    #icon{
+      margin-left: 20px;
+    }
+    
+    #icon:active{
+      color: white;
+    }
+  }
