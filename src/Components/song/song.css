@@ -38,3 +38,44 @@
   .icon-container{
     
   }
+
+  @media only screen and (max-width: 375px){
+    .song-container{
+      height: 400px;
+      width: 300px;
+      display: flex;
+      align-items: center;
+      /* justify-content: center; */
+      flex-direction: column;
+      margin-bottom: 50px;
+    }
+    
+    #song-info{
+      height: 75px;
+      width: 300px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    
+    #ep-art{
+      margin-top: 15px;
+      box-shadow: 5px, 5px, 5px, 5px, black;
+      border-style: solid;
+      border-color: whitesmoke;
+      border-width: 3px;
+      height: 175px;
+      width: 175px;
+    }
+    
+    #ep{
+     font-size: 20px;
+     font-weight: 200;
+    }
+    
+    #ep-title{
+      font-size: 20px;
+      font-weight: 500;
+      margin-top: -15px;
+    }
+  }

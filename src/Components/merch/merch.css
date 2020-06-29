@@ -10,7 +10,7 @@
     justify-content: center;
   }
   
-  .contain-scroll{
+  .contain-scroll-merch{
     height: 500px;
     width: 100vw;
     overflow-y: scroll;
@@ -18,4 +18,28 @@
     align-items: center;
     flex-direction: column;
     padding-top: 50px;
+  }
+
+  @media only screen and (max-width: 375px){
+
+    .merch-page{
+      width: 100vw;
+      height: 100vh;
+      background-image: url('./Hannett000336-R1-068-32A.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .contain-scroll-merch{
+      height: 85vh;
+      width: 100vw;
+      overflow-y: scroll;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top: 10px;
+    }
   }

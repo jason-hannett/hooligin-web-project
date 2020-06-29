@@ -35,7 +35,6 @@
   #view-product-image{
     margin-top: 10px;
     margin-left: 10px;
-  
   }
   
   .view-product-description-container{
@@ -105,10 +104,13 @@
   
   #merch-price{
     margin-top: -15px;
+    font-weight: 400;
+    color: rgb(67, 73, 82);
   }
   
   #merch-name{
-    font-weight: 400;
+    font-weight: 500;
+    color: black;
   }
   
   #merch-button{
@@ -166,4 +168,140 @@
     width: 150px;
     height: 25px;
     background-color: brown;
+  }
+
+  @media only screen and (max-width: 375px){
+    
+    #view-product-image{
+      margin-top: 10px;
+      margin-left: 10px;
+      height: 175px;
+      width: 175px;
+    }
+
+    .products-container{
+      height: 400px;
+      width: 300px;
+      display: flex;
+      align-items: center;
+      /* justify-content: center; */
+      flex-direction: column;
+      margin-bottom: 25px;;
+    }
+
+    .merch-container{
+      height: 300px;
+      width: 260px;
+      display: flex;
+      align-items: center;
+      /* justify-content: center; */
+      color: white;
+      flex-direction: column;
+      margin-bottom: 50px;
+    }
+
+    #merch-button{
+      height: 35px;
+      width: 75px;
+      background-color: black;
+      color: white;
+      border-style: none;
+      border-radius: 5%;
+    }
+    
+    #merch-button:active{
+      background-color: rgb(114, 114, 114);
+    }
+
+    .view-product-container{
+      height: 400px;
+      width: 700px;
+      /* background-color: pink; */
+    }
+    
+    
+    #view-product-image{
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+    
+    .view-product-description-container{
+      height: 100px;
+      width: 250px;
+      margin-left: 375px;
+      margin-top: -20px;
+      padding-left: 5px;
+      word-wrap: break-word;
+    }
+    
+    #view-product-image{
+      box-shadow: 5px, 5px, 20px, 20px black;
+    }
+    
+    #view-product-select{
+      margin-left: 375px;
+      margin-top: 30px;
+      width: 150px;
+      height: 30px;
+    }
+    
+    #add-to-cart{
+      height: 30px;
+      margin-left: 10px;
+      background-color: black;
+      border-style: none;
+      color: white;
+    }
+
+    .single-merch-container{
+      height: 60vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-top: -50px;
+    }
+    
+    .single-merch-info{
+      width: 200px;
+      height: 100px;
+      margin-top: 30px; 
+      margin-left: -20px;
+    }
+
+    .view-product-description-container{
+      height: 100px;
+      width: 250px;
+      margin-left: -0px;
+      margin-top: 20px;
+      padding-left: 5px;
+      word-wrap: break-word;
+    }
+    
+    
+    #single-merch-name{
+      color: black;
+    }
+    
+    #single-merch-price{
+      color: black;
+      margin-top: -10px;
+    }
+
+    #view-product-select{
+      margin-left: -0px;
+      margin-top: 30px;
+      width: 150px;
+      height: 30px;
+    }
+    
+    #add-to-cart{
+      height: 30px;
+      margin-left: 10px;
+      margin-top: 25px;
+      background-color: black;
+      border-style: none;
+      color: white;
+    }
+    
   }

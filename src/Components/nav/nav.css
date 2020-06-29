@@ -10,6 +10,7 @@ header{
     justify-content: center;
     background-color: transparent;
     color: black;
+    padding-left: 10px;
   }
   
   
@@ -146,4 +147,94 @@ header{
     font-size: 10px;
     font-weight: 500;
     margin-bottom: 25px;
+  }
+
+  @media only screen and (max-width: 375px){
+    header{
+      width: 100vw;
+      height: 100vw;
+      position: fixed;
+    }
+    
+    .nav-container{
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      color: black;
+    }
+
+    .nav-links{
+      height: 40px;
+      width: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+    }
+    
+    #music-link{
+      font-size: 20px;
+      font-weight: 400;
+      position: sticky;
+    }
+    #music-link:active{
+      color: white;
+    }
+    
+    #merch-link{
+      font-size: 20px;
+      font-weight: 400;
+    }
+    #merch-link:active{
+      color: white;
+    }
+    
+    #film-link{
+      font-size: 20px;
+      font-weight: 400;
+    }
+    #film-link:active{
+      color: white;
+    }
+    
+    #contact-link{
+      font-size: 20px;
+      font-weight: 400;
+    }
+    #contact-link:active{
+      color: white;
+    }
+    
+    #admin-link{
+      font-size: 20px;
+      font-weight: 400;
+    }
+    
+    #admin-link:active{
+      color: white;
+    }
+    
+    .shopping-cart-container{
+      height: auto;
+      width: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #shopping-cart{
+      margin-right: 700px;
+    }
+    
+    #shopping-cart:active{
+      color: white;
+    }
+    
+    .nav-cart-qty{
+      font-size: 10px;
+      font-weight: 500;
+      margin-bottom: 25px;
+    }
   }

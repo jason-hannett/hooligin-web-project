@@ -34,7 +34,7 @@ class Music extends Component{
         })
         return(
             <div className='music-page'>
-                <div className='contain-scroll'>
+                <div className='contain-scroll-music'>
                {songs}
                </div>
         </div>

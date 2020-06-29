@@ -33,7 +33,7 @@ class Merch extends Component{
         })
         return(
             <div className='merch-page'>
-                <div className='contain-scroll'>
+                <div className='contain-scroll-merch'>
                 {product}
                 </div>
             </div>

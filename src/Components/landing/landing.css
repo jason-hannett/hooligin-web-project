@@ -56,3 +56,62 @@
     color: rgb(56, 71, 98);
   }
   
+  @media only screen and (max-width: 375px){
+    .landing{
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: url('/photos/Hannett007300-R1-051-24.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    #login{
+      height: 30px;
+      width: 325px;
+      border-style: none;
+      outline: none;
+      background-color: transparent;
+      color: white;
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+    
+    #login::placeholder{
+      color: rgb(213,123,127);
+      font-size: 15px;
+      opacity: 0.7;
+    }
+
+    #password{
+      height: 30px;
+      width: 275px;
+      border-style: none;
+      outline: none;
+      background-color: transparent;
+      color: white;
+      text-align: center;
+      font-size: 25px;
+      margin-bottom: 35px;
+    }
+    
+    #password::placeholder{
+      color: rgb(74, 96, 133);
+      font-size: 15px;
+      opacity: 0.7;
+    }
+
+    #enter{
+      text-align: center;
+      color: rgb(246, 232, 232);
+    }
+    
+    #enter:hover{
+      font-size: 25px;
+      cursor: pointer;
+      color: rgb(56, 71, 98);
+    }
+  }
