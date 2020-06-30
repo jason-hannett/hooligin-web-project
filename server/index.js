@@ -13,9 +13,7 @@ const express = require('express'),
 
      app.use(express.json());
 
-     app.get('*', (req, res)=>{
-        res.sendFile(path.join(__dirname, '../build/index.html'));
-    });
+     app.use( express.static( `${__dirname}/../build` ) );
 
      app.use(session({
         resave: false,
@@ -49,5 +47,9 @@ const express = require('express'),
     app.post('/api/register', authCtrl.register)
     app.post('/api/login', authCtrl.login)
     app.get('/api/logout', authCtrl.logout)
+
+      app.get('*', (req, res)=>{
+        res.sendFile(path.join(__dirname, '../build/index.html'));
+    });
 
     app.listen(port, () => console.log(`server is thoomin on ${SERVER_PORT}`))
