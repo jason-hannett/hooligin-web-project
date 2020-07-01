@@ -30,5 +30,6 @@ create table song
 
 create table cart(
     cart_id serial primary key,
-    id int references product(id)
+    id int references product(id),
+    user_id int references users(id)
 );

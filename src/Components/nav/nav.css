@@ -125,7 +125,17 @@ header{
     font-size: 22px;
     cursor: pointer;
   }
+
+  .nav-user-dropdown{
+    width: 30px;
+
+
+  }
   
+  #nav-user-icon{
+    margin-left: 300px;
+  }
+
   .shopping-cart-container{
     height: auto;
     width: 50px;
@@ -135,11 +145,10 @@ header{
   }
   
   #shopping-cart{
-    margin-left: 700px;
+    margin-left: 600px;
   }
   
   #shopping-cart:hover{
-    margin-left: 700px;
     cursor: pointer;
   }
   

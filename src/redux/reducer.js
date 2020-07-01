@@ -1,17 +1,17 @@
 const initialState = {
     email: '',
-    id: 0
+    user_id: 0
 }
 
 const SET_USER_INFO = 'SET_USER_INFO'
 const LOGOUT_USER = 'LOGOUT_USER'
 
-export const setUserInfo = (id, email) => {
+export const setUserInfo = (user_id, email) => {
     console.log(email)
-    console.log(id)
+    console.log(user_id)
     return {
         type: SET_USER_INFO,
-        payload: {id, email}
+        payload: {user_id, email}
     }
 }
 

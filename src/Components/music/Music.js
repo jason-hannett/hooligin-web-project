@@ -28,7 +28,7 @@ class Music extends Component{
 
 
     render(){
-        console.log(this.props)
+        console.log(this.state)
         const songs = this.state.songs.map((element, index) => {
             return <Song key={index} song={element} getAllSongs={this.getAllSongs}/>
         })

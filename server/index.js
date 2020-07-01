@@ -33,7 +33,7 @@ const express = require('express'),
     app.get('/api/all-products', ctrl.getAllProducts)
     app.get('/api/all-songs', ctrl.getAllSongs)
     app.get('/api/product/:id', ctrl.getProduct)
-    app.get('/api/get-cart', ctrl.getAllCart)
+    app.get('/api/get-cart/:id', ctrl.getAllCart)
     app.post('/api/add-subscriber', ctrl.addEmail)
     app.post('/api/add-product', ctrl.addProduct)
     app.post('/api/add-song', ctrl.addSong)

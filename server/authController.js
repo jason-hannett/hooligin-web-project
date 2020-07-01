@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 module.exports = {
     register: async(req, res) => {
         const {email, password} = req.body;
+        console.log(req.body)
         const db = req.app.get('db');
 
         let foundUser = await db.auth.verify_user(email);
@@ -27,7 +28,7 @@ module.exports = {
             return res.status(400).send("email doesn't exist")
         }
 
-        const authenticated = (password, foundUser[0].password);
+        const authenticated = bcrypt.compareSync(password, foundUser[0].password);
         if(!authenticated){
             return res.status(400).send('Password is incorrect')
         }

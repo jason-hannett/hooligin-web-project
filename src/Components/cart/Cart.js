@@ -29,7 +29,7 @@ class Cart extends Component{
     }
 
     getAllCart = () => {
-        axios.get('/api/get-cart')
+        axios.get(`/api/get-cart/${this.props.user.user_id}`)
         .then(response => {
             this.setState({cart: response.data})
         })
@@ -42,8 +42,8 @@ class Cart extends Component{
     }
 
     render(){
-        console.log(this.state.cart)
-        console.log(this.props)
+        // console.log(this.state.cart)
+        console.log(this.props.user.user_id)
         console.log(this.state.cart.length)
         const getCart = this.state.cart.map((element, index) => {
             return <Cartitem key={index} product={element} getAllCart={this.getAllCart}/>
@@ -89,7 +89,8 @@ const mapStateToProps = reduxState => {
     
     return {
         products: reduxState.product,
-        cart: reduxState.cart
+        cart: reduxState.cart,
+        user: reduxState.reducer
     }};
 
 export default connect(mapStateToProps)(Cart);

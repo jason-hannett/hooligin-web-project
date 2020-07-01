@@ -1,4 +1,4 @@
 insert into cart
-(id)
+(user_id, id)
 values
-(${id});
+(${user_id}, ${id});

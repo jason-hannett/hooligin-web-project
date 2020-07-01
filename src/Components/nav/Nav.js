@@ -15,14 +15,18 @@ class Nav extends Component {
     }
 
     componentDidMount = () => {
-        axios.get('/api/get-cart')
+        this.getAllCart()
+    }
+
+    getAllCart = () => {
+        axios.get(`/api/get-cart/${this.props.user.user_id}`)
         .then(response => {
             this.setState({cart: response.data})
         })
     }
     
     render(props){
-        console.log(this.state.cart.length)
+        console.log(this.state)
         let cartQty = this.state.cart.length;
     return(
         <header className='nav-container'>
@@ -39,7 +43,7 @@ class Nav extends Component {
                 <h2 
                     id='contact-link'
                     onClick={() => this.props.history.push('/contact')}>Contact</h2>
-                {this.props.user.id === 1 ? 
+                {this.props.user.user_id === 1 ? 
                 (
                     <h2 
                     id='admin-link'
@@ -47,6 +51,13 @@ class Nav extends Component {
                 ):
                 (<></>)}
                 
+            </div>
+            <div className='nav-user-dropdown'>
+                <img
+                    src='/photos/user1.png'
+                    height='25px'
+                    id='nav-user-icon'
+                    onClick={() => this.props.history.push('/register')}/>
             </div>
             <div className='shopping-cart-container'>
                 <img

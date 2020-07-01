@@ -3,12 +3,11 @@
     width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .cart-item-container{
     height: 500px;
-    width: 98vw;
+    width: 100vw;
     display: flex;
     justify-content: center;
     overflow-y: scroll;
@@ -47,8 +46,9 @@
     width: 100vw;
     display: flex;
     align-items: center;
-    flex-direction: column;
-    /* overflow-y: scroll; */
+    justify-content: center;
+    flex-direction: row;
+    overflow-y: scroll;
 }
 
 .cart-total{
@@ -89,4 +89,8 @@
     width: 200px;
     display: flex;
     justify-content: space-evenly;
+}
+
+.cart-action-box:hover{
+    cursor: pointer;
 }

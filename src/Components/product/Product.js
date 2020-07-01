@@ -16,7 +16,7 @@ class Product extends Component{
     }
 
     getAllCart = () => {
-        axios.get('/api/get-cart')
+        axios.get(`/api/get-cart/${this.props.user.user_id}`)
         .then(response => {
             this.setState({cart: response.data})
         })
@@ -65,7 +65,7 @@ class Product extends Component{
                 <>
                 {this.props.location.pathname === (`/product/${this.props.product.id}`) ?
                 (<div className='single-merch-container'>
-                {this.props.user.id === 1 ? 
+                {this.props.user.user_id === 1 ? 
             (
             <img 
                 src='/photos/kisspng-x-mark-check-mark-cross-sign-clip-art-x-mark-5ac402470c31d6.21140477152279507905.png'
@@ -109,7 +109,7 @@ class Product extends Component{
                 :
                 (
                 <div className='merch-container'>
-                {this.props.user.id === 1 ? 
+                {this.props.user.user_id === 1 ? 
             (
             <img 
                 src='/photos/kisspng-x-mark-check-mark-cross-sign-clip-art-x-mark-5ac402470c31d6.21140477152279507905.png'

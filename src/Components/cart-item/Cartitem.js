@@ -47,7 +47,7 @@ class Cartitem extends Component{
                     width='50px'/>
                     <p
                         id='cart-product-name'>{this.props.product.name} - {this.props.product.size}</p>
-                    <div className='price-total-box'>
+                    <div id='price-total-box'>
                         <p>${this.props.product.price}</p>
                         <input
                             placeholder={this.state.qty}
