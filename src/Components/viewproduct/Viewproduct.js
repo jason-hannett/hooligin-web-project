@@ -29,7 +29,7 @@ class Viewproduct extends Component{
 
     
     render(){
-        console.log(this.props.location)
+        console.log(this.props)
         let singleProduct = this.state.singleProduct.map((element, index) => {
             return <Product key={index} product={element} getProduct={this.getProduct}/>
         })
@@ -46,7 +46,8 @@ class Viewproduct extends Component{
 const mapStateToProps = reduxState => {
     
     return {
-        products: reduxState.product
+        products: reduxState.product,
+        user: reduxState.reducer
     }};
 
 export default connect(mapStateToProps, {setProductInfo})(Viewproduct);

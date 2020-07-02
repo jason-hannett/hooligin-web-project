@@ -9,19 +9,29 @@ class Cart extends Component{
     constructor(props){
         super()
         this.state = {
-            cart: []
+            cart: [],
+            total: undefined
         }
     }
 
     
 
 
-    orderTotal = () => {
-        let sum = this.state.cart.reduce(function(a, b){
-            return a + b;
-        }, 0);
-        return sum
+    priceFinder = () => {
+        const price = []
+        const num = this.state.cart.filter((element, index, cart) => {
+            console.log(element.total)
+            return price.push(element.total)
+        })
+        return price
     }
+
+    grandTotal = () => {
+        const sum = this.priceFinder().reduce(function(a, b){
+          return a + b
+        }, 0)
+          return sum
+        }
     
 
     componentDidMount = () => {
@@ -43,8 +53,9 @@ class Cart extends Component{
 
     render(){
         // console.log(this.state.cart)
-        console.log(this.props.user.user_id)
-        console.log(this.state.cart.length)
+        console.log(this.props
+            )
+        console.log(this.state.cart)
         const getCart = this.state.cart.map((element, index) => {
             return <Cartitem key={index} product={element} getAllCart={this.getAllCart}/>
         })
@@ -69,12 +80,13 @@ class Cart extends Component{
                         )} 
                         </div> 
                     <div className='cart-total'>
-                        <h3 id='overall-total'>Order Total: ${this.orderTotal()}</h3>
+                        <h3 id='overall-total'>Order Total: ${this.grandTotal()}</h3>
                    </div>
                     <div className='cart-action-container'>
                         <div className='cart-action-box'>
                             <button
-                                id='cart-button'>update cart</button>
+                                id='cart-button'
+                                onClick={this.getAllCart}>update cart</button>
                             <button
                                 id='cart-button'>checkout</button>
                         </div>

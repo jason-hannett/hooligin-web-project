@@ -3,7 +3,8 @@ const initialState = {
     price: undefined,
     description: '',
     size: '',
-    qty: undefined}],   
+    qty: undefined,
+    total: undefined}],   
 }
 
 const GET_CART = 'GET_CART'

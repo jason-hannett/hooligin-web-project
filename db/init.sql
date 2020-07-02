@@ -3,7 +3,7 @@ create table user_email (
 );
 
 create table users (
-	id serial primary key,
+	user_id serial primary key,
 	email varchar(250) not null,
 	password text not null
 );
@@ -31,5 +31,7 @@ create table song
 create table cart(
     cart_id serial primary key,
     id int references product(id),
-    user_id int references users(id)
+    user_id int references users(user_id),
+    total int,
+    qty int
 );

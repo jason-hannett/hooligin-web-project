@@ -94,6 +94,17 @@ module.exports = {
         .catch(err => res.status(500).send(err))
     },
 
+    updateCart: (req, res) => {
+        const db = req.app.get('db');
+        const {cart_id} = req.params
+        const {total, qty} = req.body
+        console.log(req.body)
+        console.log(req.params)
+        db.update_cart(cart_id, total, qty)
+        .then(total => res.status(200).send(total))
+        .catch(err => res.status(500).send(err))
+    },
+
     getAllCart: (req, res) => {
         const db = req.app.get('db');
         const {id} = req.params

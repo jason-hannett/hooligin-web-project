@@ -24,6 +24,14 @@ class Nav extends Component {
             this.setState({cart: response.data})
         })
     }
+
+    logout = (props) => {
+        axios.get('/api/logout')
+        .then(() => {
+          this.props.logoutUser();
+          this.props.history.push('/')
+        })
+      }
     
     render(props){
         console.log(this.state)
@@ -57,7 +65,15 @@ class Nav extends Component {
                     src='/photos/user1.png'
                     height='25px'
                     id='nav-user-icon'
-                    onClick={() => this.props.history.push('/register')}/>
+                    onClick={() => this.props.history.push('/')}/>
+                <div className='nav-user-dropdown-content'>
+                    <p>{this.props.user.email}</p>
+                    <img
+                        id='nav-logout-icon'
+                        height='20px'
+                        src='/photos/user_logout-512.png'
+                        onClick={this.logout}/>
+                </div>
             </div>
             <div className='shopping-cart-container'>
                 <img

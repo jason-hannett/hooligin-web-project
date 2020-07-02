@@ -11,13 +11,15 @@ class Cartitem extends Component{
         super(props)
 
         this.state = {
-            qty: 1
+            qty: undefined,
+            total: undefined
         }
     }
 
     priceTotal = (price, qty) => {
         let sum = price * qty;
-        return sum
+        this.state.total = sum
+        return this.state.total
     }
 
     inputHandler = (event) => {
@@ -35,9 +37,19 @@ class Cartitem extends Component{
         })
     }
 
+    updateCart = () => {
+        const {cart_id} = this.props.product
+        const {total, qty} = this.state
+        axios.put(`api/update-cart/${cart_id}`, {total: total, qty: qty})
+        .then(response => {
+            this.props.getAllCart()
+        })
+    }
+
 
     render(){
         console.log(this.props)
+        this.priceTotal(this.props.product.price, this.state.qty)
         return(
             <div>
                 <div className='cart-container'>
@@ -50,15 +62,16 @@ class Cartitem extends Component{
                     <div id='price-total-box'>
                         <p>${this.props.product.price}</p>
                         <input
-                            placeholder={this.state.qty}
+                            placeholder={this.props.product.qty}
                             id='qty-input'
                             name='qty'
                             value={this.state.qty}
                             onChange={(event) => this.inputHandler(event)}/>
+                        <p onClick={this.updateCart}>update</p>
                         <button
                             id='cart-button'
                             onClick={this.deleteCartItem}>remove</button>
-                        <p> ${this.priceTotal(this.props.product.price, this.state.qty)}</p>
+                        <p> ${this.props.product.total}</p>
                     </div>
                 </div> 
             </div>
@@ -71,7 +84,7 @@ const mapStateToProps = reduxState => {
     return {
         user: reduxState.reducer,
         products: reduxState.product,
-        cart: reduxState.cart
+        carts: reduxState.cart
     }};
 
 export default withRouter(connect(mapStateToProps, {setCart})(Cartitem));

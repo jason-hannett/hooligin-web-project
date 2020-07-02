@@ -59,7 +59,7 @@ class Product extends Component{
       }
 
     render(){
-        console.log(this.state)
+        console.log(this.props)
         return(
             <div>
                 <>
@@ -101,9 +101,18 @@ class Product extends Component{
                     <option>Large</option>
                     <option>X-Large</option>
                 </select>
-                <button 
+                {this.props.user.user_id === 0 ? 
+                (
+                    <button 
+                        id='add-to-cart'
+                        onClick={() => this.props.history.push('/')}>Add to Cart</button>
+                )
+                :
+                (
+                    <button 
                     id='add-to-cart'
                     onClick={this.updateProduct}>Add to Cart</button>
+                )}
             </div>
                 )
                 :
