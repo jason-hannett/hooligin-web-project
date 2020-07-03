@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux';
+import {logoutUser} from '../../redux/reducer'
+import Cartitem from '../cart-item/Cartitem'
 import axios from 'axios'
 import './nav.css'
 
@@ -36,6 +38,9 @@ class Nav extends Component {
     render(props){
         console.log(this.state)
         let cartQty = this.state.cart.length;
+        const {cart} = this.state.cart.map((element, index) => {
+           return <Cartitem key={index} item={element}/>
+        })
     return(
         <header className='nav-container'>
             <div className='nav-links'>
@@ -51,7 +56,7 @@ class Nav extends Component {
                 <h2 
                     id='contact-link'
                     onClick={() => this.props.history.push('/contact')}>Contact</h2>
-                {this.props.user.user_id === 1 ? 
+                {this.props.user.email === 'officialhooligin@gmail.com' ? 
                 (
                     <h2 
                     id='admin-link'
@@ -67,21 +72,35 @@ class Nav extends Component {
                     id='nav-user-icon'
                     onClick={() => this.props.history.push('/')}/>
                 <div className='nav-user-dropdown-content'>
-                    <p>{this.props.user.email}</p>
-                    <img
-                        id='nav-logout-icon'
-                        height='20px'
-                        src='/photos/user_logout-512.png'
-                        onClick={this.logout}/>
+                    {this.props.user.user_id === 0 ? 
+                    (
+                    <>
+                        <button
+                            id='nav-login-button' 
+                            onClick={() => this.props.history.push('/')}>Login</button>
+                    </>
+                    )
+                    :
+                    (
+                    <>
+                        <p 
+                            id='nav-username'>{this.props.user.email}</p>
+                        <img
+                            id='nav-logout-icon'
+                            height='20px'
+                            src='/photos/user_logout-512.png'
+                            onClick={this.logout}/>
+                    </>
+                    )}
                 </div>
             </div>
             <div className='shopping-cart-container'>
-                <img
-                    id='shopping-cart' 
-                    src='/photos/shopping_cart_PNG38.png'
-                    height='25px'
-                    onClick={() => this.props.history.push('/cart')}/>
-                <p className='nav-cart-qty'>{cartQty}</p>
+                    <img
+                        id='shopping-cart' 
+                        src='/photos/shopping_cart_PNG38.png'
+                        height='25px'
+                        onClick={() => this.props.history.push('/cart')}/>
+                    <p className='nav-cart-qty'>{cartQty}</p>
             </div>
         </header>
     )
@@ -95,4 +114,4 @@ const mapStateToProps = reduxState => {
         cart: reduxState.cart
     }};
 
-export default withRouter(connect(mapStateToProps)(Nav));
+export default withRouter(connect(mapStateToProps, {logoutUser})(Nav));

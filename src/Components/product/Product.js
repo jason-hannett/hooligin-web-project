@@ -4,9 +4,11 @@ import {connect} from 'react-redux'
 import {setCart} from '../../redux/cart'
 import axios from 'axios'
 import './product.css'
+import { toast } from 'react-toastify'
 
+toast.configure()
 class Product extends Component{
-
+    
     constructor(props){
         super(props)
 
@@ -58,6 +60,11 @@ class Product extends Component{
         })
       }
 
+      landing = () => {
+          this.props.history.push('/')
+              toast('please log in')
+      }
+
     render(){
         console.log(this.props)
         return(
@@ -65,7 +72,7 @@ class Product extends Component{
                 <>
                 {this.props.location.pathname === (`/product/${this.props.product.id}`) ?
                 (<div className='single-merch-container'>
-                {this.props.user.user_id === 1 ? 
+                {this.props.user.email === 'officialhooligin@gmail.com' ? 
             (
             <img 
                 src='/photos/kisspng-x-mark-check-mark-cross-sign-clip-art-x-mark-5ac402470c31d6.21140477152279507905.png'
@@ -105,7 +112,7 @@ class Product extends Component{
                 (
                     <button 
                         id='add-to-cart'
-                        onClick={() => this.props.history.push('/')}>Add to Cart</button>
+                        onClick={this.landing}>Add to Cart</button>
                 )
                 :
                 (
@@ -118,7 +125,7 @@ class Product extends Component{
                 :
                 (
                 <div className='merch-container'>
-                {this.props.user.user_id === 1 ? 
+                {this.props.user.email === 'officialhooligin@gmail.com' ? 
             (
             <img 
                 src='/photos/kisspng-x-mark-check-mark-cross-sign-clip-art-x-mark-5ac402470c31d6.21140477152279507905.png'

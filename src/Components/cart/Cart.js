@@ -1,21 +1,25 @@
 import React, {Component} from 'react' 
 import {connect} from 'react-redux'
 import Cartitem from '../cart-item/Cartitem'
+import StripeCheckout from 'react-stripe-checkout'
 import axios from 'axios'
+import {toast} from 'react-toastify'
 import './cart.css'
+// import { applyMiddleware } from 'redux'
 
+toast.configure()
 class Cart extends Component{
 
     constructor(props){
         super()
         this.state = {
             cart: [],
-            total: undefined
+            total: undefined,
+            status: ''
         }
     }
 
     
-
 
     priceFinder = () => {
         const price = []
@@ -45,16 +49,52 @@ class Cart extends Component{
         })
     }
 
+    deleteAllCart = () => {
+        axios.delete(`/api/delete-all-cart/${this.props.user.user_id}`)
+        .then(
+            this.getAllCart()
+        )
+    }
+
     inputHandler = (event) => {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
 
+    // handleToken = (token, addresses) => {
+    //     console.log({token, addresses})
+    //     const {cart} = this.state
+    //     axios.post('https://ry7v05l6on.sse.codesandbox.io/checkout', {token, cart})
+    //     .then(response => {
+    //         this.setState({status: response.data})
+    //         this.deleteAllCart()
+    //     })
+    //     if(this.state.status === 'success'){
+    //         toast('Success! Check emails for details', {type: 'success'})
+    //     } else {
+    //         toast('Something went wrong', {type: 'error'})
+    //     }
+    // }
+
+    handleToken = (token, addresses) => {
+        const {cart} = this.state
+        axios.post('https://ry7v05l6on.sse.codesandbox.io/checkout', {token, cart})
+        .then(response => {
+            // console.log(response.data)
+            // this.setState({status: response.data})
+            // if(this.state.status === 'success'){
+            //             toast('Success! Check emails for details', {type: 'success'})
+            //         } else {
+            //             toast('Something went wrong', {type: 'error'})
+            //         }
+            this.deleteAllCart()
+        })
+    }
+
     render(){
-        // console.log(this.state.cart)
-        console.log(this.props
-            )
+        console.log(this.state.cart)
+        console.log(this.props)
         console.log(this.state.cart)
         const getCart = this.state.cart.map((element, index) => {
             return <Cartitem key={index} product={element} getAllCart={this.getAllCart}/>
@@ -84,11 +124,19 @@ class Cart extends Component{
                    </div>
                     <div className='cart-action-container'>
                         <div className='cart-action-box'>
-                            <button
+                            {/* <button
                                 id='cart-button'
-                                onClick={this.getAllCart}>update cart</button>
-                            <button
-                                id='cart-button'>checkout</button>
+                                onClick={this.getAllCart}>update cart</button> */}
+                            {/* <button
+                                id='cart-button'
+                                onClick={this.deleteAllCart}>checkout</button> */}
+                <StripeCheckout
+                stripeKey='pk_test_51H0a27CG5ezdbL8o726Z4JDnMtKX9EcpfOPGZ6Xy9rIxmXL4OSU2eHdh9hsMUivY1TGiZ1tXDG2jorQUEVxyvImA00vm2cDlDi'
+                    token={this.handleToken}
+                    billingAddress
+                    shippingAddress
+                    amount={this.grandTotal() * 100}
+                />
                         </div>
                     </div>
                 </div>

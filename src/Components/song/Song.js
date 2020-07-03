@@ -17,7 +17,7 @@ function Song(props) {
 
     return(
              <div className='song-container'>
-                 {props.user.user_id === 1 ? 
+                 {props.user.email === 'officialhooligin@gmail.com' ? 
                  (
                   <img 
                     src='/photos/kisspng-x-mark-check-mark-cross-sign-clip-art-x-mark-5ac402470c31d6.21140477152279507905.png'

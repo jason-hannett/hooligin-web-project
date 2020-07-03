@@ -5,7 +5,7 @@ import {setCart} from '../../redux/cart'
 import axios from 'axios'
 import './Cartitem.css'
 
-class Cartitem extends Component{
+class Navcart extends Component{
 
     constructor(props){
         super(props)
@@ -48,32 +48,24 @@ class Cartitem extends Component{
 
 
     render(){
-        console.log(this.props.cart)
-        this.priceTotal(this.props.product.price, this.state.qty)
+        console.log(this.props)
         return(
-            <div>
-                <div className='cart-container'>
+            <div className='nav-cart-container'>
+                <p
+                    id='nav-cart-x'
+                    onClick={this.deleteCartItem}>X</p>
                 <img
-                    src={this.props.product.image}
-                    height='50px'
-                    width='50px'/>
-                    <p
-                        id='cart-product-name'>{this.props.product.name} - {this.props.product.size}</p>
-                    <div id='price-total-box'>
-                        <p>${this.props.product.price}</p>
-                        <input
-                            placeholder={this.props.product.qty}
-                            id='qty-input'
-                            name='qty'
-                            value={this.state.qty}
-                            onChange={(event) => this.inputHandler(event)}/>
-                        <p onClick={this.updateCart}>update</p>
-                        <button
-                            id='cart-button'
-                            onClick={this.deleteCartItem}>remove</button>
-                        <p> ${this.props.product.total}</p>
-                    </div>
-                </div> 
+                    id='nav-cart-image'
+                    src={this.props.cart.image}
+                    height='10px'/>
+                <p
+                    id='nav-cart-name'>{this.props.cart.name}</p>
+                <input
+                    id='nav-cart-qty'
+                    placeholder={this.props.cart.qty}/>
+                <p
+                    id='nav-cart-total'>
+                    {this.props.cart.total}</p>
             </div>
         )
     }
@@ -84,7 +76,7 @@ const mapStateToProps = reduxState => {
     return {
         user: reduxState.reducer,
         products: reduxState.product,
-        cart: reduxState.cart
+        carts: reduxState.cart
     }};
 
-export default withRouter(connect(mapStateToProps, {setCart})(Cartitem));
+export default withRouter(connect(mapStateToProps, {setCart})(Navcart));

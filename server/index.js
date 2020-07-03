@@ -4,6 +4,9 @@ require('dotenv').config();
 const express = require('express'),
      massive = require('massive'),
      session = require('express-session'),
+     stripe = require('stripe')('sk_test_51H0a27CG5ezdbL8oWuCc7ycWyCU5C5NC1Ckm08Xuz1Ea2tC030BNR3COXOOq0Gs89UThvVZxfOZz3IQCQdRqLTv500SsQnoEOy'),
+     uuid = require('uuid'),
+     cors = require('cors'),
      {SERVER_PORT, CONNECTION_STRING, SESSION_SECRET} = process.env,
      ctrl = require('./controller'),
      authCtrl = require('./authController'),
@@ -12,7 +15,7 @@ const express = require('express'),
      app = express();
 
      app.use(express.json());
-
+     app.use(cors())
      app.use( express.static( `${__dirname}/../build` ) );
 
      app.use(session({
@@ -30,6 +33,58 @@ const express = require('express'),
         console.log('db connected')
     })
 
+    //STRIP ENDPOINTS
+        app.get("/stripe-info", (req, res) => {
+            res.send("Add your Stripe Secret Key to the .require('stripe') statement!");
+        });
+      
+        app.post("/checkout", async (req, res) => {
+        // console.log("Request:", req.body);
+      
+        let error;
+        let status;
+        try {
+          const { product, token } = req.body;
+      
+          const customer = await stripe.customers.create({
+            email: token.email,
+            source: token.id
+          });
+      
+          const idempotency_key = uuid();
+          const charge = await stripe.charges.create(
+            {
+              amount: product.price * 100,
+              currency: "usd",
+              customer: customer.id,
+              receipt_email: token.email,
+              description: `Purchased the ${product.name}`,
+              shipping: {
+                name: token.card.name,
+                address: {
+                  line1: token.card.address_line1,
+                  line2: token.card.address_line2,
+                  city: token.card.address_city,
+                  country: token.card.address_country,
+                  postal_code: token.card.address_zip
+                }
+              }
+            },
+            {
+              idempotency_key
+            }
+          );
+          console.log("Charge:", { charge });
+          status = "success";
+        } catch (error) {
+          console.error("Error:", error);
+          status = "failure";
+        }
+      
+        res.json({ error, status });
+      });
+
+    //main endpoints
     app.get('/api/all-products', ctrl.getAllProducts)
     app.get('/api/all-songs', ctrl.getAllSongs)
     app.get('/api/product/:id', ctrl.getProduct)
@@ -41,6 +96,7 @@ const express = require('express'),
     app.delete('/api/delete-song/:id', ctrl.deleteSong)
     app.delete('/api/delete-product/:id', ctrl.deleteProduct)
     app.delete('/api/delete-cart-item/:cart_id', ctrl.deleteCartItem)
+    app.delete('/api/delete-all-cart/:user_id', ctrl.deleteAllCart)
     app.put(`/api/update-product/:id`, ctrl.updateProduct)
     app.put(`/api/update-cart/:cart_id`, ctrl.updateCart)
 

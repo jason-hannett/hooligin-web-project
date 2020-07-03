@@ -131,34 +131,54 @@ header{
   .nav-user-dropdown{
     position: relative;
     display: inline-block;
-    margin-left: 125px;
+    /* margin-left: 125px; */
   }
 
   .nav-user-dropdown-content{
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    min-width: 120px;
+    background-color: white;
+    background: rgba(255, 255, 255, 0.4);
+    height: auto;
     padding: 12px 16px;
     z-index: 1;
   }
 
   .nav-user-dropdown:hover .nav-user-dropdown-content{
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 190px;
+    /* opacity: 0.5; */
   }
+
+
 
   #nav-logout-icon:hover{
     cursor: pointer;
   }
+
+  #nav-login-button{
+    background-color: black;
+    color: white;
+    border-style: none;
+  }
   
   #nav-user-icon{
-    margin-left: 170px;
+    margin-left: 320px;
     /* width: 50px; */
 
   }
 
   #nav-user-icon:hover{
     cursor: pointer;
+  }
+
+  #nav-username{
+    font-size: 10px;
+    font-weight: 700;
   }
 
   .shopping-cart-container{

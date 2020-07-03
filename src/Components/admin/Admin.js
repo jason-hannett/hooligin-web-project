@@ -57,83 +57,94 @@ class Admin extends Component{
         console.log(this.state)
         return(
             <div className='product-page'>
-                <div className='product-container'>
-                <h2 id='add-product-header'>Add Product</h2>
-                    <img
-                        id='product-img'
-                        src={this.state.image}
-                        height='25px'/>
-                    <input
-                            placeholder='image'
-                            name='image'
-                            value={this.state.image}
-                            onChange={(event) => this.inputHandler(event)}
-                            id='product-input'/>
-                    <input
-                        placeholder='name'
-                        name='name'
-                        value={this.state.name}
-                        onChange={(event) => this.inputHandler(event)}
-                        id='product-input'/>
-                    <input
-                        placeholder='price'
-                        value={this.state.price}
-                        name='price'
-                        type='number'
-                        onChange={(event) => this.inputHandler(event)}
-                        id='product-input'/>
-                    <input
-                        placeholder='description'
-                        value={this.state.description}
-                        name='description'
-                        onChange={(event) => this.inputHandler(event)}
-                        id='product-description'/>
-                    <button 
-                        id='product-button'
-                        onClick={this.addProduct}>Add Product</button>
-                </div>
-                <div className='add-song-container'>
-                <h2 id='add-song-header'>Add Song</h2>
-                    <input
-                        id='song-input'
-                        onChange={(event) => this.inputHandler(event)}
-                        name='song_image' 
-                        value={this.state.song_image}
-                        placeholder='song image'/>
-                    <input
-                        id='song-input'
-                        onChange={(event) => this.inputHandler(event)}
-                        name='type' 
-                        value={this.state.type}
-                        placeholder='type'/>
-                    <input
-                        id='song-input'
-                        onChange={(event) => this.inputHandler(event)}
-                        name='title' 
-                        value={this.state.title}
-                        placeholder='title'/>
-                    <input
-                        id='song-input'
-                        onChange={(event) => this.inputHandler(event)}
-                        name='spotify' 
-                        value={this.state.spotify}
-                        placeholder='spotify link'/>
-                    <input
-                        id='song-input'
-                        onChange={(event) => this.inputHandler(event)}
-                        name='apple' 
-                        value={this.state.apple}
-                        placeholder='apple link'/>
-                    <input
-                        id='song-input'
-                        onChange={(event) => this.inputHandler(event)}
-                        name='soundcloud' 
-                        value={this.state.soundcloud}
-                        placeholder='soundcloud link'/>
-                    <button
-                        id='add-song-button'
-                        onClick={this.addSong}>Add Song</button>
-                </div>
+                {this.props.user.email === 'officialhooligin@gmail.com' ? 
+                (
+                    <>
+                        <div className='product-container'>
+                            <h2 id='add-product-header'>Add Product</h2>
+                            <img
+                                id='product-img'
+                                src={this.state.image}
+                                height='25px'/>
+                            <input
+                                    placeholder='image'
+                                    name='image'
+                                    value={this.state.image}
+                                    onChange={(event) => this.inputHandler(event)}
+                                    id='product-input'/>
+                            <input
+                                placeholder='name'
+                                name='name'
+                                value={this.state.name}
+                                onChange={(event) => this.inputHandler(event)}
+                                id='product-input'/>
+                            <input
+                                placeholder='price'
+                                value={this.state.price}
+                                name='price'
+                                type='number'
+                                onChange={(event) => this.inputHandler(event)}
+                                id='product-input'/>
+                            <input
+                                placeholder='description'
+                                value={this.state.description}
+                                name='description'
+                                onChange={(event) => this.inputHandler(event)}
+                                id='product-description'/>
+                            <button 
+                                id='product-button'
+                                onClick={this.addProduct}>Add Product</button>
+                        </div>
+                        <div className='add-song-container'>
+                            <h2 id='add-song-header'>Add Song</h2>
+                            <input
+                                id='song-input'
+                                onChange={(event) => this.inputHandler(event)}
+                                name='song_image' 
+                                value={this.state.song_image}
+                                placeholder='song image'/>
+                            <input
+                                id='song-input'
+                                onChange={(event) => this.inputHandler(event)}
+                                name='type' 
+                                value={this.state.type}
+                                placeholder='type'/>
+                            <input
+                                id='song-input'
+                                onChange={(event) => this.inputHandler(event)}
+                                name='title' 
+                                value={this.state.title}
+                                placeholder='title'/>
+                            <input
+                                id='song-input'
+                                onChange={(event) => this.inputHandler(event)}
+                                name='spotify' 
+                                value={this.state.spotify}
+                                placeholder='spotify link'/>
+                            <input
+                                id='song-input'
+                                onChange={(event) => this.inputHandler(event)}
+                                name='apple' 
+                                value={this.state.apple}
+                                placeholder='apple link'/>
+                            <input
+                                id='song-input'
+                                onChange={(event) => this.inputHandler(event)}
+                                name='soundcloud' 
+                                value={this.state.soundcloud}
+                                placeholder='soundcloud link'/>
+                            <button
+                                id='add-song-button'
+                                onClick={this.addSong}>Add Song</button>
+                        </div>
+                    </>
+                )
+                :
+                (
+                    <div>
+                        <h2 id='admin-no-access'>Access Denied, Bitch</h2>
+                    </div>
+                )}
             </div>
         )
     }

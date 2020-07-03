@@ -48,6 +48,7 @@ class Landing extends Component{
     }
 
     render(props){
+        console.log(this.props)
         return(
             <div className='landing'>
                 {this.props.location.pathname === ('/register') ?
@@ -84,6 +85,7 @@ class Landing extends Component{
                                 type='password'/>
                         <h2 id='enter' onClick={this.login}>ENTER</h2>
                         <p>Don't have an account? Register <span onClick={() => this.props.history.push('/register')}>Here</span></p>
+                        <p onClick={() => this.props.history.push('/music')}>(continue as guest)</p>
                     </>
                 )}
             </div>
@@ -91,4 +93,10 @@ class Landing extends Component{
     }
 }
 
-export default connect(null, {setUserInfo})(withRouter(Landing))
+const mapStateToProps = reduxState => {
+    return {
+        user: reduxState.reducer
+    }
+}
+
+export default connect(mapStateToProps, {setUserInfo})(withRouter(Landing))
