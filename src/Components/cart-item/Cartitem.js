@@ -11,7 +11,7 @@ class Cartitem extends Component{
         super(props)
 
         this.state = {
-            qty: undefined,
+            qty: 1,
             total: undefined
         }
     }
@@ -71,7 +71,7 @@ class Cartitem extends Component{
                         <button
                             id='cart-button'
                             onClick={this.deleteCartItem}>remove</button>
-                        <p> ${this.props.product.total}</p>
+                        <p> ${this.priceTotal(this.props.product.price, this.state.qty)}</p>
                     </div>
                 </div> 
             </div>

@@ -2,8 +2,11 @@ const { applyMiddleware } = require('redux');
 
 require('dotenv').config();
 const express = require('express'),
+     bodyParser = require('body-parser'),
+     cookieParser = require('cookie-parser'),
      massive = require('massive'),
      session = require('express-session'),
+     {sendEmail} = require('./mail/mail'),
      stripe = require('stripe')('sk_test_51H0a27CG5ezdbL8oWuCc7ycWyCU5C5NC1Ckm08Xuz1Ea2tC030BNR3COXOOq0Gs89UThvVZxfOZz3IQCQdRqLTv500SsQnoEOy'),
      uuid = require('uuid'),
      cors = require('cors'),
@@ -16,6 +19,9 @@ const express = require('express'),
 
      app.use(express.json());
      app.use(cors())
+     app.use(bodyParser.urlencoded({extended: true}));
+     app.use(bodyParser.json());
+     app.use(cookieParser());
      app.use( express.static( `${__dirname}/../build` ) );
 
      app.use(session({
@@ -33,7 +39,18 @@ const express = require('express'),
         console.log('db connected')
     })
 
-    //STRIP ENDPOINTS
+    //NODE ENPOINTS
+
+    app.post('/api/sendMail', (req, res) => {
+      const {email} = req.body
+      console.log(req.body)
+      sendEmail(email, "hello")
+  
+  })
+
+  // app.post('/api/send-email', ctrl.emailResponse)
+
+    //STRIPE ENDPOINTS
         app.get("/stripe-info", (req, res) => {
             res.send("Add your Stripe Secret Key to the .require('stripe') statement!");
         });

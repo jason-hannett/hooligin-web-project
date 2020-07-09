@@ -13,7 +13,8 @@ class Product extends Component{
         super(props)
 
         this.state = {
-            size: ''
+            size: '',
+            qty: 1
         }
     }
 
@@ -43,15 +44,15 @@ class Product extends Component{
         axios.post(`/api/add-cart/${this.props.product.id}`)
         .then(response => {
             this.props.history.push('/merch')
-            this.getAllCart()
+            // this.getAllCart()
         })
     }
 
       updateProduct = () => {
         console.log('update button pressed')
         const {id} = this.props.product
-        const {size} = this.state
-        axios.put(`/api/update-product/${id}`, {size: size})
+        const {size, qty} = this.state
+        axios.put(`/api/update-product/${id}`, {size: size, qty: qty})
         .then(response => {
           console.log(response.data)
         //   this.props.history.push(`/cart/${this.props.product.id}`)
@@ -86,7 +87,7 @@ class Product extends Component{
                     src={this.props.product.image}
                     height='250px'
                     width='250px'
-                    id='view-product-image'/>
+                    />
                 <div className='single-merch-info'>
                     <h2 
                         id='single-merch-name'>{this.props.product.name}</h2>
@@ -118,7 +119,7 @@ class Product extends Component{
                 (
                     <button 
                     id='add-to-cart'
-                    onClick={this.updateProduct}>Add to Cart</button>
+                    onClick={this.addToCart}>Add to Cart</button>
                 )}
             </div>
                 )
@@ -137,8 +138,6 @@ class Product extends Component{
             (<></>)}
                 <img
                     src={this.props.product.image}
-                    height='250px'
-                    width='250px'
                     id='view-product-image'/>
                 <div className='merch-info'>
                     <h2 

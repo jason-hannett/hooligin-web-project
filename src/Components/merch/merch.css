@@ -11,14 +11,17 @@
   }
   
   .contain-scroll-merch{
-    height: 410px;
-    width: 100vw;
-    overflow-y: scroll;
+    height: 70vh;
+    width: 60vw;
+    /* background-color: black; */
+    overflow: scroll;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    flex-direction: column;
-    margin-top: 85px;
-    padding-top: 50px;
+    justify-content: center;
+    padding-top: 20px;
+    margin-top: 120px;
+    /* border-style: solid; */
   }
 
   @media only screen and (max-width: 375px){
@@ -35,12 +38,16 @@
     }
     
     .contain-scroll-merch{
-      height: 85vh;
+      height: 80vh;
       width: 100vw;
-      overflow-y: scroll;
+      /* background-color: black; */
+      overflow: scroll;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      flex-direction: column;
-      padding-top: 10px;
+      justify-content: center;
+      padding-top: 20px;
+      margin-top: 60px;
+      /* border-style: solid; */
     }
   }

@@ -52,7 +52,8 @@ class Cart extends Component{
     deleteAllCart = () => {
         axios.delete(`/api/delete-all-cart/${this.props.user.user_id}`)
         .then(
-            this.getAllCart()
+            // this.getAllCart()
+            this.props.history.push('/music')
         )
     }
 

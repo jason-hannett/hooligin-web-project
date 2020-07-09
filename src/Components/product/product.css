@@ -35,8 +35,9 @@
   #view-product-image{
     margin-top: 10px;
     margin-left: 10px;
-    /* height: 175px;
-    width: 175px; */
+    height: 150px;
+    width: 150px;
+    box-shadow: 15px 20px 20px rgb(102, 102, 102);
   }
   
   .view-product-description-container{
@@ -87,14 +88,14 @@
   }
 
   .merch-container{
-    height: 400px;
+    height: 300px;
     width: 260px;
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     color: white;
     flex-direction: column;
-    margin-bottom: 50px;
+    /* margin-left: 25px;
+    margin-right: 25px; */
   }
   
   .merch-info{
@@ -134,13 +135,13 @@
   }
   
   .products-container{
-    height: 400px;
+    height: 300px;
     width: 300px;
     display: flex;
     align-items: center;
     /* justify-content: center; */
     flex-direction: column;
-    margin-bottom: 50px;;
+    /* margin-bottom: 50px;; */
   }
   
   .product{
@@ -196,7 +197,7 @@
     }
 
     .merch-container{
-      height: 300px;
+      height: 280px;
       width: 260px;
       display: flex;
       align-items: center;

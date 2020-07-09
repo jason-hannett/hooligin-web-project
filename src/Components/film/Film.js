@@ -29,10 +29,6 @@ function Film(props) {
                     src='/photos/Hannett007301-R1-007-2.jpg'
                     height='150px'
                     id='photo'/>    
-                <img
-                    src=''
-                    height='150px'
-                    id='photo'/>
             </div>        
         </div>
     )

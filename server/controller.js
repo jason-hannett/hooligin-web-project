@@ -1,14 +1,22 @@
+const { sendEmail } = require('./mail/mail');
+
 module.exports = {
 
-    addEmail: (req, res) => {
+    addEmail: async(req, res) => {
         const db = req.app.get('db');
         const {email} = req.body;
+
+        let foundEmail = await db.verify_email(email);
+        if(foundEmail[0]){
+            return res.status(400).send(console.log('email already exists'))
+        }
          console.log(req.body)
         db.add_email({email})
         // .then(() => res.status(200).send(email))
         .then(() => res.sendStatus(200))
         .catch(err => res.status(500).send(err))
     },
+
     
     addProduct: (req, res) => {
         const db = req.app.get('db');
@@ -41,10 +49,10 @@ module.exports = {
     updateProduct: (req, res) => {
         const db = req.app.get('db');
         const {id} = req.params
-        const {size} = req.body
+        const {size, qty} = req.body
         console.log(req.body)
         console.log(req.params)
-        db.update_product(id, size)
+        db.update_product(id, size, qty)
         .then(product => res.status(200).send(product))
         .catch(err => res.status(500).send(err))
     },

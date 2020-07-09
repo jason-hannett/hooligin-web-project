@@ -13,116 +13,66 @@ header{
     padding-left: 10px;
   }
   
-  
-  .dropbtn {
-    background-color: transparent;
-    color: black;
-    font-size: 20px;
-    font-weight: 400;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    /* background-image: url('/photos/Hannett007300-R1-013-5.jpg'); */
-    background-color: black;
-    background-size: cover;
-    color: black;
-    text-align: center;
-    min-width: 75px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  /* Links inside the dropdown */
-  .dropdown-content p {
-    color: black;
-    /* padding: 12px 16px; */
-    text-decoration: none;
-    display: block;
-  }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content p:hover {color: #f1f1f1}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {
-    display: block;
-    cursor: pointer;
-    background-color: white;
-    /* opacity: 0.5; */
-    border-style: solid;
-  }
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {
-    background-color: transparent;
-    color: white;
-  }
 
   .nav-links{
     height: 40px;
-    width: 350px;
+    width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 350px;
+    margin-left: 650px;
     
   }
   
   #music-link{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 400;
     position: sticky;
   }
   #music-link:hover{
     font-size: 22px;
+    color: rgb(246, 242, 242);
     cursor: pointer;
   }
   
   #merch-link{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 400;
   }
   #merch-link:hover{
     font-size: 22px;
+    color: rgb(246, 242, 242);
     cursor: pointer;
   }
   
   #film-link{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 400;
   }
   #film-link:hover{
     font-size: 22px;
+    color: rgb(246, 242, 242);
     cursor: pointer;
   }
   
   #contact-link{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 400;
   }
   #contact-link:hover{
     font-size: 22px;
+    color: rgb(246, 242, 242);
     cursor: pointer;
   }
   
   #admin-link{
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 400;
   }
   
   #admin-link:hover{
     font-size: 22px;
+    color: rgb(246, 242, 242);
     cursor: pointer;
   }
 
@@ -131,7 +81,7 @@ header{
   .nav-user-dropdown{
     position: relative;
     display: inline-block;
-    /* margin-left: 125px; */
+    margin-left: 220px;
   }
 
   .nav-user-dropdown-content{
@@ -167,7 +117,7 @@ header{
   }
   
   #nav-user-icon{
-    margin-left: 320px;
+    margin-left: 280px;
     /* width: 50px; */
 
   }
@@ -221,10 +171,13 @@ header{
 
     .nav-links{
       height: 40px;
-      width: 350px;
+      width: 40vw;
+      /* background-color: white; */
       display: flex;
       align-items: center;
       justify-content: space-between;
+      /* margin-left: -0px; */
+      margin-right: 350px;
       
     }
     
@@ -232,6 +185,7 @@ header{
       font-size: 20px;
       font-weight: 400;
       position: sticky;
+      margin-left: 25px;
     }
     #music-link:active{
       color: white;
@@ -240,6 +194,7 @@ header{
     #merch-link{
       font-size: 20px;
       font-weight: 400;
+      margin-left: 5px;
     }
     #merch-link:active{
       color: white;
@@ -248,6 +203,7 @@ header{
     #film-link{
       font-size: 20px;
       font-weight: 400;
+      margin-left: 5px;
     }
     #film-link:active{
       color: white;
@@ -256,6 +212,7 @@ header{
     #contact-link{
       font-size: 20px;
       font-weight: 400;
+      margin-left: 5px;
     }
     #contact-link:active{
       color: white;
@@ -270,16 +227,16 @@ header{
       color: white;
     }
     
-    .shopping-cart-container{
+    /* .shopping-cart-container{
       height: auto;
       width: 50px;
       display: flex;
       align-items: center;
       justify-content: center;
-    }
+    } */
     
     #shopping-cart{
-      margin-right: 700px;
+      margin-left: -1400px;
     }
     
     #shopping-cart:active{

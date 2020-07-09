@@ -20,10 +20,15 @@ class Subscribe extends Component{
         const email = this.state
         axios.post('/api/add-subscriber', email)
         .then(response => {
+            this.sendEmail()
             this.props.history.push('/music')
         })
     }
     
+    sendEmail = () => {
+        const email = this.state
+        axios.post('/api/sendMail', email)
+    }
 
     inputHandler = (event) => {
         this.setState({
