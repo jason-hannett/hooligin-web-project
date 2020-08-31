@@ -85,7 +85,7 @@ class Landing extends Component{
                                 type='password'/>
                         <h2 id='enter' onClick={this.login}>ENTER</h2>
                         <p>Don't have an account? Register <span onClick={() => this.props.history.push('/register')}>Here</span></p>
-                        <p onClick={() => this.props.history.push('/music')}>(continue as guest)</p>
+                        <p onClick={() => this.props.history.push('/music')} id='groupie'>(continue as groupie)</p>
                     </>
                 )}
             </div>

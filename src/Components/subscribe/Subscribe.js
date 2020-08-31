@@ -3,7 +3,9 @@ import axios from 'axios'
 import {connect} from 'react-redux'
 import {setSubscriberInfo} from '../../redux/subscriber'
 import {withRouter} from 'react-router-dom'
+import {toast, ToastContainer} from 'react-toastify'
 import './subscribe.css'
+
 
 class Subscribe extends Component{
 
@@ -22,6 +24,7 @@ class Subscribe extends Component{
         .then(response => {
             this.sendEmail()
             this.props.history.push('/music')
+            this.notify()
         })
     }
     
@@ -29,6 +32,8 @@ class Subscribe extends Component{
         const email = this.state
         axios.post('/api/sendMail', email)
     }
+
+    notify = () => toast("Subscribed!");
 
     inputHandler = (event) => {
         this.setState({
@@ -50,6 +55,7 @@ class Subscribe extends Component{
                     <button 
                         id='subscribe-button'
                         onClick={this.addSubscriber}>Subscribe</button>
+                        <ToastContainer />
                 </div>
             </div>
         )

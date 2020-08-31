@@ -92,12 +92,13 @@ module.exports = {
 
     addCart: (req, res) => {
         const db = req.app.get('db');
-        console.log(req.session.user)
+        // console.log(req.session.user)
         const {user_id} = req.session.user;
         const {id} = req.params
+        const {qty, total} = req.body
          console.log(req.body)
-         console.log(req.params)
-        db.add_cart({user_id, id})
+        //  console.log(req.params)
+        db.add_cart({user_id, id, qty, total})
         .then(() => res.sendStatus(200))
         .catch(err => res.status(500).send(err))
     },

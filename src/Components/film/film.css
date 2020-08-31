@@ -11,38 +11,41 @@
   
   .film-container{
     width: 750px;
-    height: 700px;
+    height: 100vh;
     overflow-y: scroll;
-    margin-right: 625px;
-    padding-left: 30px;
-    padding-top: 30px;
+    margin-right: 800px;
+    /* padding-left: 30px; */
+    /* padding-top: 200px; */
+    /* padding-bottom: 200px; */
     display: flex;
     flex-wrap: wrap;
+
+    animation-name: photo-scroll;
+    /* animation-direction: normal; */
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
   }
   
   #photo{
-    margin-left: 10px;
-    border-style: solid;
+    /* margin-right: 70px; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-style: none;
     border-color: rgb(14, 12, 10);
     border-width: 5px;
-    height: 225px;
-    width: 225px;
-
-    animation-name: photo-scroll;
-    animation-direction: normal;
-    animation-duration: infinite;
-  }
-  
-  #photo:hover{
     height: 500px;
     width: 500px;
-    cursor: pointer;
-    margin-bottom: 10px;
-    margin-top: 10px;
+
+    
   }
 
   @keyframes photo-scroll{
-    
+    from {
+      bottom: 0;
+    }
+    to{
+      top: 0;
+    }
   }
 
   @media only screen and (max-width: 375px){

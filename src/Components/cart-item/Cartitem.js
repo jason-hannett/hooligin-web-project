@@ -11,7 +11,7 @@ class Cartitem extends Component{
         super(props)
 
         this.state = {
-            qty: 1,
+            qty: undefined,
             total: undefined
         }
     }
@@ -42,6 +42,7 @@ class Cartitem extends Component{
         const {total, qty} = this.state
         axios.put(`api/update-cart/${cart_id}`, {total: total, qty: qty})
         .then(response => {
+            axios.put(`api/update-cart/${cart_id}`, {total: total, qty: qty})
             this.props.getAllCart()
         })
     }
@@ -56,7 +57,8 @@ class Cartitem extends Component{
                 <img
                     src={this.props.product.image}
                     height='50px'
-                    width='50px'/>
+                    width='50px'
+                    id='cart-item-image'/>
                     <p
                         id='cart-product-name'>{this.props.product.name} - {this.props.product.size}</p>
                     <div id='price-total-box'>
@@ -71,7 +73,7 @@ class Cartitem extends Component{
                         <button
                             id='cart-button'
                             onClick={this.deleteCartItem}>remove</button>
-                        <p> ${this.priceTotal(this.props.product.price, this.state.qty)}</p>
+                        <p id='cart-total'> ${this.priceTotal(this.props.product.price, this.props.product.qty)}</p>
                     </div>
                 </div> 
             </div>

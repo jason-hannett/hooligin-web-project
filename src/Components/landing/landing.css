@@ -10,52 +10,89 @@
   }
   
   #login{
-    height: 30px;
+    height: 40px;
     width: 500px;
     border-style: none;
     outline: none;
     background-color: transparent;
     color: white;
     text-align: center;
-    font-size: 25px;
-    margin-bottom: 5px;
+    font-size: 35px;
+    margin-bottom: 25px;
+    border-style: solid;
+    border-top: none;
+    border-right: none;
+    border-left: none;
   }
   
   #login::placeholder{
     color: rgb(212, 103, 109);
-    font-size: 15px;
+    font-size: 25px;
     opacity: 0.7;
   }
   
   #password{
-    height: 30px;
+    height: 40px;
     width: 500px;
     border-style: none;
     outline: none;
     background-color: transparent;
     color: white;
     text-align: center;
-    font-size: 25px;
+    font-size: 35px;
     margin-bottom: 35px;
+    border-style: solid;
+    border-top: none;
+    border-right: none;
+    border-left: none;
   }
   
   #password::placeholder{
     color: rgb(74, 96, 133);
-    font-size: 15px;
+    font-size: 25px;
     opacity: 0.7;
   }
 
   #enter{
+    font-size: 50px;
     text-align: center;
     color: rgb(246, 232, 232);
   }
   
   #enter:hover{
-    font-size: 25px;
+    font-size: 55px;
     cursor: pointer;
     color: rgb(56, 71, 98);
+    animation-name: enter;
+    animation-duration: 100ms;
+    animation-timing-function: linear;
+  }
+
+  .landing p {
+    font-size: 15px;
+  }
+
+  span{
+    color: rgb(255, 59, 59);
+    font-weight: 800;
   }
   
+  span:hover{
+    color: rgb(255, 153, 153);
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  #groupie:hover{
+    color: white;
+    cursor: pointer;
+  }
+
+  @keyframes enter{
+    from {font-size: 50px;}
+    to {font-size: 55px}
+  }
+
   @media only screen and (max-width: 375px){
     .landing{
       height: 100vh;
@@ -109,8 +146,8 @@
       color: rgb(246, 232, 232);
     }
     
-    #enter:hover{
-      font-size: 25px;
+    #enter:active{
+      /* font-size: 25px; */
       cursor: pointer;
       color: rgb(56, 71, 98);
     }

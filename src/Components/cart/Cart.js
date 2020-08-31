@@ -5,7 +5,7 @@ import StripeCheckout from 'react-stripe-checkout'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 import './cart.css'
-// import { applyMiddleware } from 'redux'
+
 
 toast.configure()
 class Cart extends Component{
@@ -45,6 +45,7 @@ class Cart extends Component{
     getAllCart = () => {
         axios.get(`/api/get-cart/${this.props.user.user_id}`)
         .then(response => {
+            console.log(response.data)
             this.setState({cart: response.data})
         })
     }
@@ -82,13 +83,6 @@ class Cart extends Component{
         const {cart} = this.state
         axios.post('https://ry7v05l6on.sse.codesandbox.io/checkout', {token, cart})
         .then(response => {
-            // console.log(response.data)
-            // this.setState({status: response.data})
-            // if(this.state.status === 'success'){
-            //             toast('Success! Check emails for details', {type: 'success'})
-            //         } else {
-            //             toast('Something went wrong', {type: 'error'})
-            //         }
             this.deleteAllCart()
         })
     }
@@ -96,7 +90,6 @@ class Cart extends Component{
     render(){
         console.log(this.state.cart)
         console.log(this.props)
-        console.log(this.state.cart)
         const getCart = this.state.cart.map((element, index) => {
             return <Cartitem key={index} product={element} getAllCart={this.getAllCart}/>
         })
@@ -127,7 +120,7 @@ class Cart extends Component{
                         <div className='cart-action-box'>
                             {/* <button
                                 id='cart-button'
-                                onClick={this.getAllCart}>update cart</button> */}
+                                onClick={this.grandTotal}>update cart</button> */}
                             {/* <button
                                 id='cart-button'
                                 onClick={this.deleteAllCart}>checkout</button> */}

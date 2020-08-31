@@ -14,7 +14,8 @@ class Product extends Component{
 
         this.state = {
             size: '',
-            qty: 1
+            qty: 1,
+            total: undefined
         }
     }
 
@@ -41,7 +42,9 @@ class Product extends Component{
       };
 
       addToCart = () => {
-        axios.post(`/api/add-cart/${this.props.product.id}`)
+          const {qty} = this.state
+          const {price} = this.props.product
+        axios.post(`/api/add-cart/${this.props.product.id}`, {qty, total: price})
         .then(response => {
             this.props.history.push('/merch')
             // this.getAllCart()

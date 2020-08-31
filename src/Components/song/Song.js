@@ -30,9 +30,7 @@ function Song(props) {
                  
                 <img
                     id='ep-art'
-                    src={props.song.song_image}
-                    height='250px'
-                    width='260px'/>
+                    src={props.song.song_image}/>
                 <div id='song-info'>
                     <h2 id='ep'>{props.song.type}</h2>
                     <h2 id='ep-title'>{props.song.title}</h2>
