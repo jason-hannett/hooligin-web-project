@@ -72,7 +72,7 @@ class Product extends Component{
     render(){
         console.log(this.props)
         return(
-            <div>
+            <div className='products-container'>
                 <>
                 {this.props.location.pathname === (`/product/${this.props.product.id}`) ?
                 (<div className='single-merch-container'>

@@ -1,0 +1,22 @@
+.view-product-page{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+@media only screen and (max-width: 375px){
+    .view-product-page{
+     height: 100vh;
+     width: 100vw;
+    }
+
+    .view-product-container{
+        width: 100vw;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
