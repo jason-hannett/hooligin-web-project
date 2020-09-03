@@ -60,4 +60,10 @@
       margin-top: 60px;
       /* border-style: solid; */
     }
+
+    #coming-soon{
+    font-size: 30px;
+      font-weight: 400;
+      color: rgb(46, 46, 46);
+  }
   }

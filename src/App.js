@@ -8,7 +8,7 @@ import './App.css';
 function App(props) {
   return (
     <div className="App">
-      {props.location.pathname === '/' || props.location.pathname === '/register'
+      {props.location.pathname === '/register' || props.location.pathname === '/login'
       ?(<>{routes}</>)
       :(<>
       <Nav/>

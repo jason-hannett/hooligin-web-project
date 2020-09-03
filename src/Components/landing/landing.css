@@ -7,6 +7,7 @@
     flex-direction: column;
     background: url('/photos/Hannett007300-R1-051-24.jpg') no-repeat center center fixed;
     background-size: cover;
+    padding-top: 100px;
   }
   
   #login{
@@ -68,6 +69,15 @@
     animation-timing-function: linear;
   }
 
+  .register-continue-container{
+    margin-top: 150px;
+    width: 300px;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .landing p {
     font-size: 15px;
   }
@@ -106,7 +116,7 @@
     }
 
     #login{
-      height: 30px;
+      height: 40px;
       width: 325px;
       border-style: none;
       outline: none;
@@ -115,17 +125,21 @@
       text-align: center;
       font-size: 25px;
       margin-bottom: 5px;
+      border-style: solid;
+      border-top: none;
+      border-right: none;
+      border-left: none;
     }
     
     #login::placeholder{
       color: rgb(213,123,127);
-      font-size: 15px;
+      font-size: 25px;
       opacity: 0.7;
     }
 
     #password{
-      height: 30px;
-      width: 275px;
+      height: 40px;
+      width: 325px;
       border-style: none;
       outline: none;
       background-color: transparent;
@@ -133,11 +147,15 @@
       text-align: center;
       font-size: 25px;
       margin-bottom: 35px;
+      border-style: solid;
+      border-top: none;
+      border-right: none;
+      border-left: none;
     }
     
     #password::placeholder{
       color: rgb(74, 96, 133);
-      font-size: 15px;
+      font-size: 25px;
       opacity: 0.7;
     }
 
@@ -150,5 +168,23 @@
       /* font-size: 25px; */
       cursor: pointer;
       color: rgb(56, 71, 98);
+    }
+
+    .register-continue-container{
+      margin-bottom: 160px;
+      width: 300px;
+      flex-direction: column;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    span:active{
+      color: rgb(255, 153, 153);
+      font-weight: 800;
+    }
+
+    #groupie:active{
+      color: white;
     }
   }

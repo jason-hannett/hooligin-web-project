@@ -65,19 +65,20 @@ class Nav extends Component {
                 (<></>)}
                 
             </div>
+            <div className='cart-user-container'>
             <div className='nav-user-dropdown'>
                 <img
                     src='/photos/user1.png'
                     height='25px'
                     id='nav-user-icon'
-                    onClick={() => this.props.history.push('/')}/>
+                    onClick={() => this.props.history.push('/login')}/>
                 <div className='nav-user-dropdown-content'>
                     {this.props.user.user_id === 0 ? 
                     (
                     <>
                         <button
                             id='nav-login-button' 
-                            onClick={() => this.props.history.push('/')}>Login</button>
+                            onClick={() => this.props.history.push('/login')}>Login</button>
                     </>
                     )
                     :
@@ -101,6 +102,7 @@ class Nav extends Component {
                         height='25px'
                         onClick={() => this.props.history.push('/cart')}/>
                     <p className='nav-cart-qty'>{cartQty}</p>
+            </div>
             </div>
         </header>
     )

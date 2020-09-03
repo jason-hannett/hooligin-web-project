@@ -13,7 +13,8 @@ import Viewproduct from './Components/viewproduct/Viewproduct'
 
 export default (
     <Switch>
-        <Route exact path ='/' component={Landing}/>
+        <Route exact path ='/music' component={Music}/>
+        <Route path ='/login' component={Landing}/>
         <Route path ='/register' component={Landing}/>
         <Route path ='/music' component={Music}/>
         <Route path ='/merch' component={Merch}/>
