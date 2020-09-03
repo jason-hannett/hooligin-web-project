@@ -34,7 +34,10 @@ class Merch extends Component{
         return(
             <div className='merch-page'>
                 <div className='contain-scroll-merch'>
-                {product}
+                {this.state.products.length === 0 
+                ? (<h2 id='coming-soon'>Merch Coming Soon!</h2>) 
+                : ({product})
+                }
                 </div>
             </div>
         )

@@ -50,9 +50,9 @@ class Nav extends Component {
                 <h2 
                     id='merch-link'
                     onClick={() => this.props.history.push('/merch')}>Shop</h2>    
-                <h2 
+                {/* <h2 
                     id='film-link'
-                    onClick={() => this.props.history.push('/film')}>Film</h2>
+                    onClick={() => this.props.history.push('/film')}>Film</h2> */}
                 <h2 
                     id='contact-link'
                     onClick={() => this.props.history.push('/contact')}>Contact</h2>
