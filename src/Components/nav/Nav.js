@@ -31,7 +31,7 @@ class Nav extends Component {
         axios.get('/api/logout')
         .then(() => {
           this.props.logoutUser();
-          this.props.history.push('/')
+          this.props.history.push('/login')
         })
       }
     

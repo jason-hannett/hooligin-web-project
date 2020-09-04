@@ -65,7 +65,7 @@ class Product extends Component{
       }
 
       landing = () => {
-          this.props.history.push('/')
+          this.props.history.push('/login')
               toast('please log in')
       }
 
