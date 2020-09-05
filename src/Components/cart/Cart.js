@@ -125,7 +125,7 @@ class Cart extends Component{
                                 id='cart-button'
                                 onClick={this.deleteAllCart}>checkout</button> */}
                 <StripeCheckout
-                stripeKey='pk_test_51H0a27CG5ezdbL8o726Z4JDnMtKX9EcpfOPGZ6Xy9rIxmXL4OSU2eHdh9hsMUivY1TGiZ1tXDG2jorQUEVxyvImA00vm2cDlDi'
+                stripeKey='pk_live_51H0a27CG5ezdbL8oj1cZfAsksM2QXPcXIuNYFbxgrwjq8L2aJ0psAVdvkIoSCUTgZ1CtCmlwBmtJ3k7MdS8WnZR800qF9aRlbl'
                     token={this.handleToken}
                     billingAddress
                     shippingAddress
